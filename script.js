@@ -1,3 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Aline Ramiro website loaded.");
+
+    console.log("Aline Ramiro Official Website Loaded");
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener("click", function(e) {
+
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if(target){
+                target.scrollIntoView({
+                    behavior:"smooth"
+                });
+            }
+
+        });
+
+    });
+
 });
