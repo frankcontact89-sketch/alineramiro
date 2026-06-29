@@ -6,19 +6,368 @@
 
   <title>Aline Ramiro | Official Website</title>
 
-  <meta name="description" content="Official website of Aline Ramiro, Founder of Prayer & Fire Global Movement, Christian leader, author and speaker." />
+  <meta name="description" content="Official website of Aline Ramiro, Founder of Prayer & Fire Global Movement, Christian author, speaker and global ministry leader." />
   <meta name="keywords" content="Aline Ramiro, Prayer and Fire, Prayer & Fire, Voz Interior, Voice Within, Christian author, Christian speaker, Global Movement Church" />
   <meta name="author" content="Aline Ramiro" />
   <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content="Aline Ramiro | Official Website" />
-  <meta property="og:description" content="Founder of Prayer & Fire Global Movement. Christian leader, author and speaker." />
+  <meta property="og:description" content="Founder of Prayer & Fire Global Movement. Christian author, speaker and global ministry leader." />
   <meta property="og:image" content="aline.JPG" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alineramiro.com" />
 
   <link rel="canonical" href="https://alineramiro.com" />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.75);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #d8b93f;
+    }
+
+    .menu {
+      display: flex;
+      gap: 26px;
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+
+    .menu a:hover {
+      color: #d8b93f;
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 130px 0 80px;
+      background:
+        radial-gradient(circle at top right, rgba(216,185,63,.25), transparent 35%),
+        radial-gradient(circle at top left, rgba(30,90,180,.35), transparent 35%),
+        linear-gradient(180deg, #07111f 0%, #0b1c33 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #d8b93f;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 8vw, 96px);
+      line-height: .95;
+      margin-bottom: 22px;
+      font-weight: 900;
+    }
+
+    .hero h2 {
+      color: #d8b93f;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      font-size: clamp(19px, 2.5vw, 25px);
+      color: #e5e7eb;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .gold-link {
+      color: #d8b93f;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+
+    .married {
+      font-size: 16px !important;
+      color: #cbd5e1 !important;
+      margin-bottom: 34px !important;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .25s ease;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary {
+      background: #d8b93f;
+      color: #07111f;
+      border-color: #d8b93f;
+    }
+
+    .secondary {
+      background: rgba(255,255,255,.07);
+      color: #ffffff;
+    }
+
+    .amazon {
+      background: #ff9900;
+      color: #111827;
+      border: none;
+      margin-top: 25px;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+    }
+
+    .hero-photo {
+      width: 100%;
+      display: block;
+      border-radius: 34px;
+      box-shadow: 0 35px 90px rgba(0,0,0,.55);
+    }
+
+    .stats {
+      background: #ffffff;
+      color: #07111f;
+      padding: 38px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      text-align: center;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 42px;
+      color: #0b1c33;
+      font-weight: 900;
+    }
+
+    .stats span {
+      color: #475569;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .light {
+      background: #f8fafc;
+      color: #07111f;
+    }
+
+    .dark {
+      background: #07111f;
+      color: #ffffff;
+    }
+
+    .contact {
+      background:
+        radial-gradient(circle at top, rgba(216,185,63,.18), transparent 40%),
+        #0b1c33;
+      color: #ffffff;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .section h2 {
+      font-size: clamp(38px, 6vw, 60px);
+      margin-bottom: 22px;
+      line-height: 1.05;
+    }
+
+    .section p {
+      font-size: 19px;
+      color: inherit;
+      opacity: .86;
+      margin-bottom: 18px;
+    }
+
+    .dark .card {
+      background: rgba(255,255,255,.06);
+      color: white;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .card {
+      background: white;
+      color: #07111f;
+      padding: 34px;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(15,23,42,.12);
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #0b1c33;
+    }
+
+    .dark .card h3 {
+      color: #d8b93f;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 40px;
+    }
+
+    .center {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .center-title {
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #d8b93f !important;
+      font-weight: 800;
+      font-size: 24px !important;
+    }
+
+    .text-link,
+    .small-link,
+    .card-title-link {
+      color: #d8b93f;
+      font-weight: 800;
+    }
+
+    .small-link {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .official-cards .btn {
+      margin: 12px 0;
+      width: 100%;
+    }
+
+    footer {
+      background: #030712;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 35px 18px;
+      font-size: 15px;
+    }
+
+    footer a {
+      color: #d8b93f;
+    }
+
+    @media (max-width: 850px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .two-col,
+      .cards,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 110px;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .hero-photo-wrap {
+        max-width: 470px;
+        margin: auto;
+      }
+
+      .stats-grid {
+        gap: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -54,8 +403,8 @@
       </h2>
 
       <p>
-        Christian leader, author and speaker helping people discover their identity in Christ
-        through biblical teaching, leadership, literature and global ministry.
+        Christian author, speaker and global ministry leader helping people discover
+        their identity in Christ through biblical teaching, prayer and purpose.
       </p>
 
       <p class="married">Married to Francisco Rivera</p>
@@ -97,7 +446,7 @@
   <div class="container two-col">
 
     <div>
-      <span class="eyebrow dark">About</span>
+      <span class="eyebrow">About</span>
       <h2>About Aline</h2>
 
       <p>
@@ -112,10 +461,7 @@
 
     <div class="card">
       <h3>Official Identity</h3>
-      <p>
-        Founder of
-        <a href="https://prayerandfire.org" target="_blank" class="text-link">Prayer & Fire</a>
-      </p>
+      <p>Founder of <a href="https://prayerandfire.org" target="_blank" class="text-link">Prayer & Fire</a></p>
       <p>Christian Author</p>
       <p>Speaker</p>
       <p>Global Ministry Leader</p>
@@ -144,15 +490,13 @@
 <section id="ministry" class="section light">
   <div class="container">
 
-    <span class="eyebrow dark">Ministry</span>
+    <span class="eyebrow">Ministry</span>
     <h2 class="center-title">Ministry & Projects</h2>
 
     <div class="cards">
 
       <div class="card">
-        <h3>
-          <a href="https://prayerandfire.org" target="_blank" class="card-title-link">Prayer & Fire</a>
-        </h3>
+        <h3><a href="https://prayerandfire.org" target="_blank" class="card-title-link">Prayer & Fire</a></h3>
         <p>A global movement of prayer, intercession, discipleship and missions.</p>
         <a href="https://prayerandfire.org" target="_blank" class="small-link">Visit website →</a>
       </div>
@@ -234,6 +578,5 @@
   </p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
