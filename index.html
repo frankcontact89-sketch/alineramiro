@@ -189,184 +189,213 @@
       border-radius: 34px;
       box-shadow: 0 35px 90px rgba(0,0,0,.55);
     }
+        /* ===== BOOK COVER ===== */
+
+    .book-cover{
+      max-width:280px;
+      margin:40px auto 30px;
+    }
+
+    .book-cover img{
+      width:100%;
+      display:block;
+      border-radius:22px;
+      box-shadow:0 30px 80px rgba(0,0,0,.55);
+      transition:.35s;
+    }
+
+    .book-cover img:hover{
+      transform:translateY(-8px) scale(1.03);
+      box-shadow:0 40px 100px rgba(0,0,0,.75);
+    }
+
+    .book-rating{
+      margin-top:18px;
+      font-size:22px;
+      color:#FFD54A;
+      font-weight:700;
+    }
 
     .stats {
-      background: #ffffff;
-      color: #07111f;
-      padding: 38px 0;
+      background:#ffffff;
+      color:#07111f;
+      padding:38px 0;
     }
 
     .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      text-align: center;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      text-align:center;
     }
 
     .stats strong {
-      display: block;
-      font-size: 42px;
-      color: #0b1c33;
-      font-weight: 900;
+      display:block;
+      font-size:42px;
+      color:#0b1c33;
+      font-weight:900;
     }
 
     .stats span {
-      color: #475569;
-      font-weight: 700;
+      color:#475569;
+      font-weight:700;
     }
 
     .section {
-      padding: 95px 0;
+      padding:95px 0;
     }
 
     .light {
-      background: #f8fafc;
-      color: #07111f;
+      background:#f8fafc;
+      color:#07111f;
     }
 
     .dark {
-      background: #07111f;
-      color: #ffffff;
+      background:#07111f;
+      color:#ffffff;
     }
 
     .contact {
       background:
-        radial-gradient(circle at top, rgba(216,185,63,.18), transparent 40%),
-        #0b1c33;
-      color: #ffffff;
+      radial-gradient(circle at top,
+      rgba(216,185,63,.18),
+      transparent 40%),
+      #0b1c33;
+      color:#ffffff;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:48px;
+      align-items:center;
     }
 
-    .section h2 {
-      font-size: clamp(38px, 6vw, 60px);
-      margin-bottom: 22px;
-      line-height: 1.05;
+    .section h2{
+      font-size:clamp(38px,6vw,60px);
+      margin-bottom:22px;
+      line-height:1.05;
     }
 
-    .section p {
-      font-size: 19px;
-      color: inherit;
-      opacity: .86;
-      margin-bottom: 18px;
+    .section p{
+      font-size:19px;
+      color:inherit;
+      opacity:.86;
+      margin-bottom:18px;
     }
 
-    .dark .card {
-      background: rgba(255,255,255,.06);
-      color: white;
-      border: 1px solid rgba(255,255,255,.12);
+    .card{
+      background:#ffffff;
+      color:#07111f;
+      padding:34px;
+      border-radius:28px;
+      box-shadow:0 20px 60px rgba(15,23,42,.12);
     }
 
-    .card {
-      background: white;
-      color: #07111f;
-      padding: 34px;
-      border-radius: 28px;
-      box-shadow: 0 20px 60px rgba(15,23,42,.12);
+    .dark .card{
+      background:rgba(255,255,255,.06);
+      color:#ffffff;
+      border:1px solid rgba(255,255,255,.12);
     }
 
-    .card h3 {
-      font-size: 26px;
-      margin-bottom: 14px;
-      color: #0b1c33;
+    .card h3{
+      font-size:26px;
+      margin-bottom:14px;
+      color:#0b1c33;
     }
 
-    .dark .card h3 {
-      color: #d8b93f;
+    .dark .card h3{
+      color:#d8b93f;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-      margin-top: 40px;
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+      margin-top:40px;
     }
 
-    .center {
-      text-align: center;
-      max-width: 850px;
-      margin: auto;
+    .center{
+      text-align:center;
+      max-width:850px;
+      margin:auto;
     }
 
-    .center-title {
-      text-align: center;
+    .center-title{
+      text-align:center;
     }
 
-    .subtitle {
-      color: #d8b93f !important;
-      font-weight: 800;
-      font-size: 24px !important;
+    .subtitle{
+      color:#d8b93f !important;
+      font-weight:800;
+      font-size:24px !important;
     }
-
-    .text-link,
+        .text-link,
     .small-link,
-    .card-title-link {
-      color: #d8b93f;
-      font-weight: 800;
+    .card-title-link{
+      color:#d8b93f;
+      font-weight:800;
     }
 
-    .small-link {
-      display: inline-block;
-      margin-top: 10px;
+    .small-link{
+      display:inline-block;
+      margin-top:10px;
     }
 
-    .official-cards .btn {
-      margin: 12px 0;
-      width: 100%;
+    .official-cards .btn{
+      margin:12px 0;
+      width:100%;
     }
 
-    footer {
-      background: #030712;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 35px 18px;
-      font-size: 15px;
+    footer{
+      background:#030712;
+      color:#cbd5e1;
+      text-align:center;
+      padding:35px 18px;
+      font-size:15px;
     }
 
-    footer a {
-      color: #d8b93f;
+    footer a{
+      color:#d8b93f;
     }
 
-    @media (max-width: 850px) {
-      .menu {
-        display: none;
+    @media (max-width:850px){
+
+      .menu{
+        display:none;
       }
 
       .hero-grid,
       .two-col,
       .cards,
-      .stats-grid {
-        grid-template-columns: 1fr;
+      .stats-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero {
-        padding-top: 110px;
-        text-align: center;
+      .hero{
+        padding-top:110px;
+        text-align:center;
       }
 
-      .hero-buttons {
-        justify-content: center;
+      .hero-buttons{
+        justify-content:center;
       }
 
-      .btn {
-        width: 100%;
-        max-width: 320px;
+      .btn{
+        width:100%;
+        max-width:320px;
       }
 
-      .hero-photo-wrap {
-        max-width: 470px;
-        margin: auto;
+      .hero-photo-wrap{
+        max-width:470px;
+        margin:auto;
       }
 
-      .stats-grid {
-        gap: 30px;
+      .stats-grid{
+        gap:30px;
       }
     }
+
   </style>
 </head>
 
@@ -374,7 +403,10 @@
 
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="#">ALINE RAMIRO</a>
+
+    <a class="brand" href="#">
+      ALINE RAMIRO
+    </a>
 
     <nav class="menu">
       <a href="#about">About</a>
@@ -383,65 +415,103 @@
       <a href="#networks">Networks</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
 <section class="hero">
-  <div class="container hero-grid">
 
-    <div class="hero-text">
-      <span class="eyebrow">Official Website</span>
+<div class="container hero-grid">
 
-      <h1>Aline Ramiro</h1>
+<div class="hero-text">
 
-      <h2>
-        Founder of
-        <a href="https://prayerandfire.org" target="_blank" class="gold-link">Prayer & Fire</a>
-        Global Movement
-      </h2>
+<span class="eyebrow">
+Official Website
+</span>
 
-      <p>
-        Christian author, speaker and global ministry leader helping people discover
-        their identity in Christ through biblical teaching, prayer and purpose.
-      </p>
+<h1>
+Aline Ramiro
+</h1>
 
-      <p class="married">Married to Francisco Rivera</p>
+<h2>
+Founder of
+<a href="https://prayerandfire.org"
+target="_blank"
+class="gold-link">
+Prayer & Fire
+</a>
 
-      <div class="hero-buttons">
-        <a href="#book" class="btn primary">Read the Book</a>
-        <a href="#contact" class="btn secondary">Invite Aline</a>
-        <a href="https://prayerandfire.org" target="_blank" class="btn secondary">Visit Prayer & Fire</a>
-      </div>
-    </div>
+Global Movement
+</h2>
 
-    <div class="hero-photo-wrap">
-      <img src="aline.JPG" alt="Aline Ramiro" class="hero-photo" />
-    </div>
+<p>
+Christian author,
+speaker and global ministry leader helping people discover their identity in Christ through biblical teaching, prayer and purpose.
+</p>
 
-  </div>
+<p class="married">
+Married to Francisco Rivera
+</p>
+
+<div class="hero-buttons">
+
+<a href="#book"
+class="btn primary">
+Read the Book
+</a>
+
+<a href="#contact"
+class="btn secondary">
+Invite Aline
+</a>
+
+<a href="https://prayerandfire.org"
+target="_blank"
+class="btn secondary">
+Visit Prayer & Fire
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-photo-wrap">
+
+<img
+src="aline.JPG"
+alt="Aline Ramiro"
+class="hero-photo">
+
+</div>
+
+</div>
+
 </section>
 
 <section class="stats">
-  <div class="container stats-grid">
-    <div>
-      <strong>45+</strong>
-      <span>Countries Reached</span>
-    </div>
 
-    <div>
-      <strong>3</strong>
-      <span>Continents</span>
-    </div>
+<div class="container stats-grid">
 
-    <div>
-      <strong>Global</strong>
-      <span>Prayer & Missions</span>
-    </div>
-  </div>
+<div>
+<strong>45+</strong>
+<span>Countries Reached</span>
+</div>
+
+<div>
+<strong>3</strong>
+<span>Continents</span>
+</div>
+
+<div>
+<strong>Global</strong>
+<span>Prayer & Missions</span>
+</div>
+
+</div>
+
 </section>
-
 <section id="about" class="section light">
   <div class="container two-col">
 
@@ -461,7 +531,14 @@
 
     <div class="card">
       <h3>Official Identity</h3>
-      <p>Founder of <a href="https://prayerandfire.org" target="_blank" class="text-link">Prayer & Fire</a></p>
+
+      <p>
+        Founder of
+        <a href="https://prayerandfire.org" target="_blank" class="text-link">
+          Prayer & Fire
+        </a>
+      </p>
+
       <p>Christian Author</p>
       <p>Speaker</p>
       <p>Global Ministry Leader</p>
@@ -474,19 +551,34 @@
   <div class="container center">
 
     <span class="eyebrow">Featured Book</span>
+
     <h2>Voice Within</h2>
-    <p class="subtitle">The Secrets of an Activated Identity</p>
+
+    <p class="subtitle">
+      The Secrets of an Activated Identity
+    </p>
+
+    <div class="book-cover">
+      <a href="https://a.co/d/01tmIqQT" target="_blank">
+        <img src="book-cover.JPG" alt="Voice Within Book Cover">
+      </a>
+    </div>
+
+    <p class="book-rating">
+      ★★★★★ 5.0 Rating on Amazon
+    </p>
 
     <p>
       A powerful book about identity, purpose, intimacy with God and discovering the voice
       that awakens destiny from within.
     </p>
 
-    <a href="https://a.co/d/01tmIqQT" target="_blank" class="btn amazon">Buy on Amazon</a>
+    <a href="https://a.co/d/01tmIqQT" target="_blank" class="btn amazon">
+      Buy on Amazon
+    </a>
 
   </div>
 </section>
-
 <section id="ministry" class="section light">
   <div class="container">
 
@@ -496,21 +588,43 @@
     <div class="cards">
 
       <div class="card">
-        <h3><a href="https://prayerandfire.org" target="_blank" class="card-title-link">Prayer & Fire</a></h3>
-        <p>A global movement of prayer, intercession, discipleship and missions.</p>
-        <a href="https://prayerandfire.org" target="_blank" class="small-link">Visit website →</a>
+        <h3>
+          <a href="https://prayerandfire.org" target="_blank" class="card-title-link">
+            Prayer & Fire
+          </a>
+        </h3>
+
+        <p>
+          A global movement of prayer, intercession, discipleship and missions.
+        </p>
+
+        <a href="https://prayerandfire.org" target="_blank" class="small-link">
+          Visit website →
+        </a>
       </div>
 
       <div class="card">
         <h3>Global Movement Church</h3>
-        <p>Serving churches and communities with biblical vision and global connection.</p>
-        <a href="#contact" class="small-link">Connect for more →</a>
+
+        <p>
+          Serving churches and communities with biblical vision and global connection.
+        </p>
+
+        <a href="#contact" class="small-link">
+          Connect for more →
+        </a>
       </div>
 
       <div class="card">
         <h3>Literature & Teaching</h3>
-        <p>Books, messages and teachings focused on identity, purpose and spiritual growth.</p>
-        <a href="https://www.instagram.com/seloprayerandfire" target="_blank" class="small-link">Visit SELO →</a>
+
+        <p>
+          Books, messages and teachings focused on identity, purpose and spiritual growth.
+        </p>
+
+        <a href="https://www.instagram.com/seloprayerandfire" target="_blank" class="small-link">
+          Visit SELO →
+        </a>
       </div>
 
     </div>
@@ -525,57 +639,129 @@
     <h2 class="center-title">Official Ministries & Social Links</h2>
 
     <div class="cards official-cards">
+            <div class="card network-card">
 
-      <div class="card network-card">
         <h3>Prayer & Fire</h3>
-        <p>Global prayer, intercession, discipleship and missions movement.</p>
-        <a href="https://prayerandfire.org" target="_blank" class="btn primary">Visit Website</a>
-        <a href="https://www.instagram.com/prayerandfire" target="_blank" class="small-link">Instagram @prayerandfire →</a>
+
+        <p>
+          Global prayer, intercession, discipleship and missions movement.
+        </p>
+
+        <a href="https://prayerandfire.org"
+           target="_blank"
+           class="btn primary">
+          Visit Website
+        </a>
+
+        <a href="https://www.instagram.com/prayerandfire"
+           target="_blank"
+           class="small-link">
+          Instagram @prayerandfire →
+        </a>
+
       </div>
 
       <div class="card network-card">
+
         <h3>SELO Prayer & Fire</h3>
-        <p>Publishing, literature, book club and Christian learning initiatives.</p>
-        <a href="https://www.instagram.com/seloprayerandfire" target="_blank" class="btn primary">Visit Instagram</a>
+
+        <p>
+          Publishing, literature, book club and Christian learning initiatives.
+        </p>
+
+        <a href="https://www.instagram.com/seloprayerandfire"
+           target="_blank"
+           class="btn primary">
+          Visit Instagram
+        </a>
+
       </div>
 
       <div class="card network-card">
+
         <h3>Aline Ramiro Global</h3>
-        <p>Official Instagram profile of Aline Ramiro.</p>
-        <a href="https://www.instagram.com/alineramiroglobal" target="_blank" class="btn primary">Visit Instagram</a>
+
+        <p>
+          Official Instagram profile of Aline Ramiro.
+        </p>
+
+        <a href="https://www.instagram.com/alineramiroglobal"
+           target="_blank"
+           class="btn primary">
+          Visit Instagram
+        </a>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
 <section id="contact" class="section contact">
+
   <div class="container center">
 
-    <span class="eyebrow">Contact</span>
-    <h2>Connect with Aline</h2>
+    <span class="eyebrow">
+      Contact
+    </span>
 
-    <p>For ministry, books, speaking invitations and global projects.</p>
+    <h2>
+      Connect with Aline
+    </h2>
+
+    <p>
+      For ministry, books, speaking invitations and global projects.
+    </p>
 
     <div class="hero-buttons">
-      <a href="mailto:alineramirocontact@gmail.com" class="btn primary">Email</a>
-      <a href="https://instagram.com/alineramiroglobal" target="_blank" class="btn secondary">Instagram</a>
-      <a href="https://wa.me/18572612862" target="_blank" class="btn secondary">WhatsApp</a>
+
+      <a href="mailto:alineramirocontact@gmail.com"
+         class="btn primary">
+        Email
+      </a>
+
+      <a href="https://instagram.com/alineramiroglobal"
+         target="_blank"
+         class="btn secondary">
+        Instagram
+      </a>
+
+      <a href="https://wa.me/18572612862"
+         target="_blank"
+         class="btn secondary">
+        WhatsApp
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 </main>
 
 <footer>
-  <p>© 2026 Aline Ramiro. Official Website.</p>
+
   <p>
-    <a href="https://alineramiro.com">AlineRamiro.com</a> ·
-    <a href="https://prayerandfire.org" target="_blank">PrayerandFire.org</a> ·
-    <a href="https://www.instagram.com/alineramiroglobal" target="_blank">Instagram</a>
+    © 2026 Aline Ramiro. Official Website.
   </p>
+
+  <p>
+    <a href="https://alineramiro.com">
+      AlineRamiro.com
+    </a>
+    ·
+    <a href="https://prayerandfire.org" target="_blank">
+      PrayerandFire.org
+    </a>
+    ·
+    <a href="https://www.instagram.com/alineramiroglobal" target="_blank">
+      Instagram
+    </a>
+  </p>
+
 </footer>
 
 </body>
