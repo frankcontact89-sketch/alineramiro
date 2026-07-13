@@ -1,797 +1,1317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
 
-  <title>Aline Ramiro | Bible Teacher, Author & Global Leader</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description" content="Official website of Aline Ramiro, Bible teacher, author, speaker, founder of Prayer & Fire Global Movement, Global Movement Church and ABA Academy." />
-  <meta name="keywords" content="Aline Ramiro, Aline Ramiro Official Website, Prayer and Fire, Prayer & Fire, ABA Academy, Abba Biblical Academy, Global Movement Church, Christian author, Bible teacher, Christian speaker, Voz Interior, Voice Within" />
-  <meta name="author" content="Aline Ramiro" />
-  <meta name="robots" content="index, follow" />
+  <title>Aline Ramiro | Bible Teacher, Author & Ministry Leader</title>
 
-  <meta property="og:title" content="Aline Ramiro | Official Website" />
-  <meta property="og:description" content="Bible teacher, author, speaker and global ministry leader. Founder of Prayer & Fire Global Movement and ABA Academy." />
-  <meta property="og:image" content="aline.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alineramiro.com" />
+  <meta
+    name="description"
+    content="Official website of Aline Ramiro, Bible teacher, Christian author and ministry leader connected with Prayer & Fire Global Movement, Movement Church and ABA Academy."
+  >
 
-  <link rel="canonical" href="https://alineramiro.com" />
+  <meta
+    name="keywords"
+    content="Aline Ramiro, Aline Ramiro official website, Bible teacher, Christian author, Voz Interior, Voice Within, Prayer and Fire, Movement Church, ABA Academy"
+  >
+
+  <meta name="author" content="Aline Ramiro">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="canonical" href="https://alineramiro.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aline Ramiro | Official Website">
+  <meta
+    property="og:description"
+    content="Bible teacher, Christian author and ministry leader. Discover her biography, book and ministry projects."
+  >
+  <meta
+    property="og:image"
+    content="https://alineramiro.com/aline.jpg"
+  >
+  <meta property="og:image:alt" content="Aline Ramiro">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://alineramiro.com/">
+  <meta property="og:site_name" content="Aline Ramiro">
+
+  <!-- Favicon provisional -->
+  <link rel="icon" type="image/jpeg" href="aline.jpg">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      background:#07111f;
-      color:#fff;
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px,92%);margin:auto}
-
-    .site-header{
-      position:fixed;
-      top:0;
-      width:100%;
-      z-index:1000;
-      background:rgba(7,17,31,.82);
-      backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+    :root {
+      --navy: #061426;
+      --navy-light: #0a2240;
+      --blue: #165dcc;
+      --blue-dark: #0d47a1;
+      --blue-light: #dcecff;
+      --sky: #eef6ff;
+      --white: #ffffff;
+      --ink: #102033;
+      --text: #425466;
+      --border: #d8e3ef;
+      --gold: #d4ad45;
+      --shadow: 0 20px 50px rgba(4, 25, 51, 0.12);
     }
 
-    .nav{
-      height:74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .brand{
-      font-weight:900;
-      letter-spacing:3px;
-      color:#d8b93f;
-      font-size:18px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .menu{
-      display:flex;
-      gap:22px;
-      font-size:14px;
-      color:#e5e7eb;
-      align-items:center;
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.65;
     }
 
-    .menu a:hover{color:#d8b93f}
+    body.menu-open {
+      overflow: hidden;
+    }
 
-    .hero{
-      min-height:100vh;
-      padding:130px 0 75px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    /* Announcement bar */
+
+    .top-bar {
+      background: var(--blue-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 950;
+      letter-spacing: 3px;
+    }
+
+    .brand-description {
+      color: var(--blue);
+      margin-top: 7px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .menu a {
+      position: relative;
+      color: var(--ink);
+      padding: 29px 0;
+    }
+
+    .menu a::after {
+      position: absolute;
+      right: 0;
+      bottom: 21px;
+      left: 0;
+      height: 2px;
+      content: "";
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .menu a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    /* Buttons */
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 0.3px;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .button-outline {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: var(--white);
+    }
+
+    .button-dark-outline {
+      border-color: var(--blue);
+      background: transparent;
+      color: var(--blue);
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
       background:
-        radial-gradient(circle at top right,rgba(216,185,63,.25),transparent 34%),
-        radial-gradient(circle at top left,rgba(30,90,180,.35),transparent 36%),
-        linear-gradient(180deg,#07111f 0%,#0b1c33 100%);
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(50, 132, 255, 0.24),
+          transparent 35%
+        ),
+        linear-gradient(135deg, var(--navy) 0%, #0b2d57 100%);
+
+      color: var(--white);
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:58px;
-      align-items:center;
+    .hero::before {
+      position: absolute;
+      top: -200px;
+      left: -180px;
+      width: 480px;
+      height: 480px;
+      content: "";
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
     }
 
-    .eyebrow{
-      display:inline-block;
-      color:#d8b93f;
-      text-transform:uppercase;
-      letter-spacing:5px;
-      font-size:13px;
-      font-weight:900;
-      margin-bottom:18px;
+    .hero-grid {
+      position: relative;
+      display: grid;
+      min-height: 650px;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 64px;
+      align-items: center;
+      padding: 76px 0;
     }
 
-    h1{
-      font-size:clamp(54px,8vw,96px);
-      line-height:.95;
-      margin-bottom:22px;
-      font-weight:950;
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      margin-bottom: 17px;
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    .hero h2{
-      color:#d8b93f;
-      font-size:clamp(26px,4vw,42px);
-      line-height:1.15;
-      margin-bottom:26px;
+    .section-label::before {
+      width: 30px;
+      height: 2px;
+      content: "";
+      background: currentColor;
     }
 
-    .hero p{
-      font-size:clamp(19px,2.3vw,24px);
-      color:#e5e7eb;
-      margin-bottom:26px;
-      max-width:760px;
+    .hero .section-label {
+      color: #8ec0ff;
     }
 
-    .gold-link{
-      color:#d8b93f;
-      text-decoration:underline;
-      text-underline-offset:6px;
+    .hero h1 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(54px, 8vw, 94px);
+      font-weight: 700;
+      letter-spacing: -3px;
+      line-height: 0.95;
     }
 
-    .hero-buttons{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:26px;
+    .hero-subtitle {
+      max-width: 650px;
+      margin-bottom: 22px;
+      color: #a9d0ff;
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 750;
+      line-height: 1.25;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:15px 26px;
-      border-radius:999px;
-      font-weight:850;
-      border:1px solid rgba(255,255,255,.25);
-      transition:.25s ease;
-      text-align:center;
+    .hero-description {
+      max-width: 650px;
+      color: #d8e8fa;
+      font-size: 18px;
     }
 
-    .btn:hover{transform:translateY(-3px)}
-    .primary{background:#d8b93f;color:#07111f;border-color:#d8b93f}
-    .secondary{background:rgba(255,255,255,.07);color:#fff}
-    .amazon{background:#ff9900;color:#111827;border:none;margin-top:25px}
-
-    .hero-photo{
-      border-radius:34px;
-      box-shadow:0 35px 90px rgba(0,0,0,.55);
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
     }
 
-    .stats{
-      background:#fff;
-      color:#07111f;
-      padding:38px 0;
+    .hero-image-wrapper {
+      position: relative;
+      max-width: 470px;
+      margin-left: auto;
     }
 
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:22px;
-      text-align:center;
+    .hero-image-frame {
+      overflow: hidden;
+      border: 9px solid rgba(255, 255, 255, 0.09);
+      border-radius: 4px;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.38);
     }
 
-    .stats strong{
-      display:block;
-      font-size:38px;
-      color:#0b1c33;
-      font-weight:950;
+    .hero-image {
+      width: 100%;
+      min-height: 540px;
+      object-fit: cover;
+      object-position: center top;
     }
 
-    .stats span{
-      color:#475569;
-      font-weight:750;
+    .image-caption {
+      position: absolute;
+      right: -24px;
+      bottom: 30px;
+      max-width: 245px;
+      padding: 18px 21px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: var(--shadow);
     }
 
-    .section{padding:95px 0}
-    .light{background:#f8fafc;color:#07111f}
-    .dark{background:#07111f;color:#fff}
-    .blue{background:#0b1c33;color:#fff}
-
-    .section h2{
-      font-size:clamp(38px,6vw,60px);
-      line-height:1.05;
-      margin-bottom:20px;
+    .image-caption strong {
+      display: block;
+      color: var(--blue);
+      margin-bottom: 3px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .section p{
-      font-size:18px;
-      opacity:.88;
-      margin-bottom:16px;
+    .image-caption span {
+      font-size: 14px;
+      font-weight: 750;
     }
 
-    .center{text-align:center;max-width:880px;margin:auto}
-    .center-title{text-align:center}
+    /* Magazine navigation */
 
-    .two-col{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:48px;
-      align-items:center;
+    .category-bar {
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
     }
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:26px;
-      margin-top:40px;
+    .category-links {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
     }
 
-    .card{
-      background:#fff;
-      color:#07111f;
-      padding:32px;
-      border-radius:28px;
-      box-shadow:0 20px 60px rgba(15,23,42,.12);
+    .category-links a {
+      padding: 22px 14px;
+      border-right: 1px solid var(--border);
+      color: var(--ink);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .dark .card,.blue .card{
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.12);
+    .category-links a:first-child {
+      border-left: 1px solid var(--border);
     }
 
-    .card h3{
-      font-size:25px;
-      margin-bottom:13px;
-      color:#0b1c33;
+    .category-links a:hover {
+      background: var(--sky);
+      color: var(--blue);
     }
 
-    .dark .card h3,.blue .card h3{color:#d8b93f}
+    /* Sections */
 
-    .small-link,.text-link,.card-title-link{
-      color:#d8b93f;
-      font-weight:850;
+    .section {
+      padding: 95px 0;
     }
 
-    .small-link{
-      display:inline-block;
-      margin-top:10px;
+    .section-soft {
+      background: var(--sky);
     }
 
-    .featured-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      margin-top:42px;
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
     }
 
-    .feature-card{
-      min-height:420px;
-      border-radius:32px;
-      padding:34px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      background:
-        linear-gradient(180deg,rgba(7,17,31,.1),rgba(7,17,31,.92)),
-        url("aline.JPG") center/cover;
-      box-shadow:0 30px 80px rgba(0,0,0,.35);
+    .section-header {
+      max-width: 830px;
+      margin-bottom: 45px;
     }
 
-    .article-list{
-      display:grid;
-      gap:18px;
+    .section-header.centered {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
     }
 
-    .article-item{
-      padding:24px;
-      border-radius:24px;
-      background:#fff;
-      color:#07111f;
-      box-shadow:0 12px 40px rgba(15,23,42,.08);
+    .section-header.centered .section-label {
+      justify-content: center;
     }
 
-    .tag{
-      display:inline-block;
-      color:#d8b93f;
-      font-weight:900;
-      text-transform:uppercase;
-      font-size:12px;
-      letter-spacing:2px;
-      margin-bottom:8px;
+    .section-title {
+      margin-bottom: 18px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(39px, 6vw, 61px);
+      letter-spacing: -1.5px;
+      line-height: 1.05;
     }
 
-    .book-cover{
-      max-width:280px;
-      margin:40px auto 30px;
+    .section-dark .section-title {
+      color: var(--white);
     }
 
-    .book-cover img{
-      border-radius:22px;
-      box-shadow:0 30px 80px rgba(0,0,0,.55);
-      transition:.35s;
+    .section-intro {
+      color: var(--text);
+      font-size: 18px;
     }
 
-    .book-cover img:hover{
-      transform:translateY(-8px) scale(1.03);
-      box-shadow:0 40px 100px rgba(0,0,0,.75);
+    .section-dark .section-intro {
+      color: #c8d8eb;
     }
 
-    .book-rating{
-      margin-top:18px;
-      font-size:22px!important;
-      color:#FFD54A;
-      font-weight:800;
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 65px;
+      align-items: start;
     }
 
-    .academy{
-      background:
-        radial-gradient(circle at top right,rgba(216,185,63,.18),transparent 35%),
-        linear-gradient(180deg,#0b1c33,#07111f);
+    .about-copy p {
+      margin-bottom: 20px;
+      color: var(--text);
+      font-size: 18px;
     }
 
-    .academy-badge{
-      display:inline-block;
-      padding:10px 18px;
-      background:rgba(216,185,63,.14);
-      border:1px solid rgba(216,185,63,.35);
-      border-radius:999px;
-      color:#d8b93f;
-      font-weight:900;
-      margin-bottom:18px;
+    .temporary-note {
+      margin-top: 25px;
+      padding: 20px;
+      border-left: 4px solid var(--blue);
+      background: var(--blue-light);
+      color: var(--ink);
+      font-size: 15px;
     }
 
-    .contact{
-      background:
-        radial-gradient(circle at top,rgba(216,185,63,.18),transparent 40%),
-        #0b1c33;
-      color:#fff;
+    .identity-card {
+      padding: 34px;
+      border-top: 5px solid var(--blue);
+      background: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .official-cards .btn{
-      width:100%;
-      margin:12px 0;
+    .identity-card h3 {
+      margin-bottom: 23px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
     }
 
-    footer{
-      background:#030712;
-      color:#cbd5e1;
-      text-align:center;
-      padding:36px 18px;
-      font-size:15px;
+    .identity-list {
+      list-style: none;
     }
 
-    footer a{color:#d8b93f}
+    .identity-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 720;
+    }
 
-    @media(max-width:900px){
-      .menu{display:none}
-      .hero-grid,.two-col,.cards,.stats-grid,.featured-grid{
-        grid-template-columns:1fr;
+    .identity-list li:last-child {
+      border-bottom: 0;
+    }
+
+    /* Ministries */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .editorial-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      padding: 34px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: 0 15px 40px rgba(7, 30, 60, 0.08);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .editorial-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-number {
+      display: block;
+      color: #b9cce2;
+      margin-bottom: 58px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 54px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .editorial-card h3 {
+      margin-bottom: 15px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .editorial-card p {
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .card-link {
+      position: absolute;
+      right: 34px;
+      bottom: 30px;
+      left: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    /* Book */
+
+    .book-layout {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .book-cover {
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .book-cover img {
+      width: 100%;
+    }
+
+    .book-copy h2 {
+      margin-bottom: 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 6vw, 70px);
+      line-height: 1;
+    }
+
+    .book-subtitle {
+      color: #88bdff;
+      margin-bottom: 23px;
+      font-size: 21px;
+      font-weight: 750;
+    }
+
+    .rating {
+      margin-bottom: 22px;
+      color: #ffd45b;
+      font-size: 19px;
+      font-weight: 850;
+    }
+
+    .book-description {
+      max-width: 650px;
+      margin-bottom: 30px;
+      color: #c8d8eb;
+      font-size: 18px;
+    }
+
+    /* ABA */
+
+    .academy-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .academy-panel {
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .academy-panel ul {
+      list-style: none;
+    }
+
+    .academy-panel li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 720;
+    }
+
+    .academy-panel li:last-child {
+      border-bottom: 0;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 58px 0 30px;
+      background: #030b16;
+      color: #b9c9db;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      color: var(--white);
+      font-size: 21px;
+      font-weight: 950;
+      letter-spacing: 3px;
+    }
+
+    .footer p {
+      max-width: 470px;
+    }
+
+    .footer h3 {
+      margin-bottom: 16px;
+      color: var(--white);
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer a:hover {
+      color: #8ec0ff;
+    }
+
+    .copyright {
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      .hero{
-        padding-top:115px;
-        text-align:center;
+      .menu {
+        position: fixed;
+        top: 117px;
+        right: 0;
+        left: 0;
+        display: none;
+        height: calc(100vh - 117px);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 20px 6%;
+        background: var(--white);
       }
 
-      .hero-buttons{
-        justify-content:center;
+      .menu.active {
+        display: flex;
       }
 
-      .btn{
-        width:100%;
-        max-width:340px;
+      .menu a {
+        padding: 19px 0;
+        border-bottom: 1px solid var(--border);
       }
 
-      .hero-photo-wrap{
-        max-width:470px;
-        margin:auto;
+      .menu a::after {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .book-layout,
+      .academy-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding: 65px 0 80px;
+      }
+
+      .hero-image-wrapper {
+        width: 100%;
+        max-width: 540px;
+        margin: 10px auto 0;
+      }
+
+      .image-caption {
+        right: 15px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-links {
+        grid-template-columns: 1fr;
+      }
+
+      .category-links a,
+      .category-links a:first-child {
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        border-left: 1px solid var(--border);
+      }
+
+      .editorial-card {
+        min-height: 335px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        font-size: 11px;
+      }
+
+      .nav {
+        min-height: 74px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-description {
+        font-size: 8px;
+      }
+
+      .menu {
+        top: 109px;
+        height: calc(100vh - 109px);
+      }
+
+      .hero {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-image {
+        min-height: 430px;
+      }
+
+      .image-caption {
+        right: 10px;
+        bottom: 15px;
+        left: 10px;
+        max-width: none;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .identity-card,
+      .academy-panel {
+        padding: 28px 23px;
+      }
+
+      .book-layout {
+        gap: 48px;
       }
     }
   </style>
 
+  <!-- Google structured data -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Aline Ramiro",
-    "url":"https://alineramiro.com",
-    "image":"https://alineramiro.com/aline.JPG",
-    "jobTitle":"Bible Teacher, Author and Global Ministry Leader",
- 
-    },
-    "sameAs":[
-
-      "https://prayerandfire.org"
-    ]
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://alineramiro.com/#profilepage",
+    "url": "https://alineramiro.com/",
+    "name": "Aline Ramiro | Official Website",
+    "description": "Official website of Aline Ramiro, Bible teacher, Christian author and ministry leader.",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://alineramiro.com/#aline-ramiro",
+      "name": "Aline Ramiro",
+      "url": "https://alineramiro.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://alineramiro.com/aline.jpg",
+        "caption": "Aline Ramiro"
+      },
+      "description": "Aline Ramiro is a Bible teacher, Christian author and ministry leader connected with Prayer & Fire Global Movement, Movement Church and ABA Academy.",
+      "jobTitle": [
+        "Bible Teacher",
+        "Christian Author",
+        "Ministry Leader"
+      ],
+      "knowsAbout": [
+        "Bible teaching",
+        "Christian identity",
+        "Prayer",
+        "Discipleship",
+        "Christian leadership"
+      ],
+      "sameAs": [
+        "https://prayerandfire.org/"
+      ],
+      "subjectOf": {
+        "@type": "Book",
+        "name": "Voz Interior: Os Segredos de Uma Identidade Ativada",
+        "author": {
+          "@type": "Person",
+          "name": "Aline Ramiro"
+        },
+        "image": "https://alineramiro.com/book-cover.JPG",
+        "url": "https://a.co/d/01tmIqQT",
+        "inLanguage": "pt"
+      }
+    }
   }
   </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="#">ALINE RAMIRO</a>
-
-    <nav class="menu">
-      <a href="#about">About</a>
-      <a href="#articles">Articles</a>
-      <a href="#teachings">Teachings</a>
-      <a href="#academy">ABA Academy</a>
-      <a href="#book">Book</a>
-      <a href="#ministry">Ministry</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <div class="top-bar">
+    OFFICIAL WEBSITE OF ALINE RAMIRO
   </div>
-</header>
 
-<main>
+  <header class="site-header">
+    <div class="container nav">
 
-<section class="hero">
-  <div class="container hero-grid">
-
-    <div class="hero-text">
-      <span class="eyebrow">Official Website</span>
-
-      <h1>Aline Ramiro</h1>
-
-      <h2>
-        Bible Teacher • Author • Global Leader
-      </h2>
-
-      <p>
-        Helping people discover their identity in Christ through biblical teaching,
-        prayer, leadership and purpose.
-      </p>
-
-      <p>
-        Founder of
-        <a href="https://prayerandfire.org" target="_blank" class="gold-link">Prayer & Fire Global Movement</a>,
-        Global Movement Church and ABA Academy.
-      </p>
-
-      <p style="font-size:16px;color:#cbd5e1;">
-        Married to Francisco Rivera
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#articles" class="btn primary">Read Articles</a>
-        <a href="#academy" class="btn secondary">ABA Academy</a>
-        <a href="#contact" class="btn secondary">Invite Aline</a>
-      </div>
-    </div>
-
-    <div class="hero-photo-wrap">
-      <img src="aline.JPG" alt="Aline Ramiro Official Website" class="hero-photo">
-    </div>
-
-  </div>
-</section>
-
-<section class="stats">
-  <div class="container stats-grid">
-    <div>
-      <strong>45+</strong>
-      <span>Countries Reached</span>
-    </div>
-    <div>
-      <strong>65+</strong>
-      <span>Churches Connected</span>
-    </div>
-    <div>
-      <strong>Global</strong>
-      <span>Prayer & Missions</span>
-    </div>
-    <div>
-      <strong>ABA</strong>
-      <span>Biblical Academy</span>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section light">
-  <div class="container two-col">
-    <div>
-      <span class="eyebrow">About</span>
-      <h2>About Aline Ramiro</h2>
-
-      <p>
-        Aline Ramiro is a Christian leader, Bible teacher, author and speaker with
-        a heart for prayer, discipleship, leadership and global missions.
-      </p>
-
-      <p>
-        Her message focuses on identity in Christ, intimacy with God, spiritual
-        formation and equipping leaders for the nations.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Official Identity</h3>
-      <p>Founder of Prayer & Fire Global Movement</p>
-      <p>Founder of ABA Academy</p>
-      <p>Bible Teacher</p>
-      <p>Christian Author</p>
-      <p>Global Ministry Leader</p>
-
-      <a href="https://www.instagram.com/alineramiror" target="_blank" class="small-link">
-        Official Instagram @alineramiror →
+      <a class="brand" href="#home" aria-label="Aline Ramiro home">
+        <span class="brand-name">ALINE RAMIRO</span>
+        <span class="brand-description">
+          Bible Teacher · Author · Ministry Leader
+        </span>
       </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="menu" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#biography">Biography</a>
+        <a href="#book">Book</a>
+        <a href="#prayer-fire">Prayer & Fire</a>
+        <a href="#movement-church">Movement Church</a>
+        <a href="#aba-academy">ABA Academy</a>
+      </nav>
+
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="articles" class="section light">
-  <div class="container">
+  <main>
 
-    <span class="eyebrow">Magazine</span>
-    <h2 class="center-title">Articles & Biblical Reflections</h2>
+    <!-- Home -->
 
-    <div class="featured-grid">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-      <div class="feature-card">
-        <span class="tag">Featured</span>
-        <h2>Discovering Your Identity in Christ</h2>
-        <p>
-          A biblical reflection on identity, calling and purpose in the life of a believer.
-        </p>
-        <a href="#contact" class="small-link">Coming soon →</a>
-      </div>
+        <div>
+          <span class="section-label">Official Profile</span>
 
-      <div class="article-list">
+          <h1>Aline Ramiro</h1>
 
-        <div class="article-item">
-          <span class="tag">Prayer</span>
-          <h3>The Power of a Life Surrendered to God</h3>
-          <p>Short biblical teaching for spiritual growth and devotion.</p>
+          <p class="hero-subtitle">
+            Bible Teacher, Christian Author and Ministry Leader
+          </p>
+
+          <p class="hero-description">
+            Biblical teaching, identity in Christ, prayer, discipleship
+            and leadership for the strengthening of believers,
+            families and churches.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#biography">
+              Read Biography
+            </a>
+
+            <a class="button button-outline" href="#book">
+              Discover the Book
+            </a>
+          </div>
         </div>
 
-        <div class="article-item">
-          <span class="tag">Leadership</span>
-          <h3>Leading with Grace, Truth and Purpose</h3>
-          <p>Equipping Christian leaders to serve with maturity and vision.</p>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-frame">
+            <img
+              src="aline.jpg"
+              alt="Aline Ramiro, Bible teacher and Christian author"
+              class="hero-image"
+              width="900"
+              height="1100"
+            >
+          </div>
+
+          <div class="image-caption">
+            <strong>Aline Ramiro</strong>
+            <span>
+              Author of Voz Interior
+            </span>
+          </div>
         </div>
 
-        <div class="article-item">
-          <span class="tag">Missions</span>
-          <h3>Reaching Nations Through Prayer and Discipleship</h3>
-          <p>A global vision for churches, leaders and families.</p>
+      </div>
+    </section>
+
+    <!-- Magazine categories -->
+
+    <div class="category-bar">
+      <div class="container category-links">
+        <a href="#biography">Biography</a>
+        <a href="#book">Book</a>
+        <a href="#prayer-fire">Prayer & Fire</a>
+        <a href="#movement-church">Movement Church</a>
+        <a href="#aba-academy">ABA Academy</a>
+      </div>
+    </div>
+
+    <!-- Biography -->
+
+    <section class="section section-soft" id="biography">
+      <div class="container about-grid">
+
+        <div class="about-copy">
+          <span class="section-label">Biography</span>
+
+          <h2 class="section-title">
+            About Aline Ramiro
+          </h2>
+
+          <p>
+            Aline Ramiro is a Bible teacher, Christian author and
+            ministry leader dedicated to helping people grow in their
+            knowledge of Scripture, understand their identity in Christ
+            and develop a deeper relationship with God.
+          </p>
+
+          <p>
+            Her ministry is connected with Prayer & Fire Global Movement,
+            Movement Church and ABA Academy, initiatives focused on
+            prayer, biblical education, discipleship, leadership and
+            global Christian service.
+          </p>
+
+          <p>
+            Through biblical teaching and Christian literature, Aline
+            shares messages about identity, purpose, spiritual maturity,
+            intimacy with God and faithful service to Jesus Christ.
+          </p>
+
+          <div class="temporary-note">
+            <strong>Temporary biography:</strong>
+            This section is ready to receive Aline’s complete official
+            biography. When the final text is available, only these
+            paragraphs will need to be replaced.
+          </div>
         </div>
 
+        <aside class="identity-card">
+          <h3>Profile</h3>
+
+          <ul class="identity-list">
+            <li>Bible Teacher</li>
+            <li>Christian Author</li>
+            <li>Ministry Leader</li>
+            <li>Prayer & Discipleship</li>
+            <li>Christian Leadership</li>
+            <li>Biblical Education</li>
+          </ul>
+        </aside>
+
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Ministries -->
 
-<section id="teachings" class="section dark">
-  <div class="container">
+    <section class="section">
+      <div class="container">
 
-    <span class="eyebrow">Teachings</span>
-    <h2 class="center-title">Bible Teachings</h2>
+        <div class="section-header centered">
+          <span class="section-label">Ministry</span>
 
-    <div class="cards">
+          <h2 class="section-title">
+            Ministry, Church and Biblical Education
+          </h2>
 
-      <div class="card">
-        <h3>Identity in Christ</h3>
-        <p>
-          Teachings to help believers understand who they are in Christ and how to walk in purpose.
-        </p>
-        <a href="#academy" class="small-link">Study more →</a>
+          <p class="section-intro">
+            Explore the principal ministries and projects associated
+            with Aline Ramiro.
+          </p>
+        </div>
+
+        <div class="content-grid">
+
+          <article class="editorial-card" id="prayer-fire">
+            <span class="card-number">01</span>
+
+            <h3>Prayer & Fire</h3>
+
+            <p>
+              Prayer & Fire is a global Christian movement centered on
+              prayer, intercession, discipleship, missions and unity
+              among believers and churches.
+            </p>
+
+            <a
+              class="card-link"
+              href="https://prayerandfire.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit official website →
+            </a>
+          </article>
+
+          <article class="editorial-card" id="movement-church">
+            <span class="card-number">02</span>
+
+            <h3>Movement Church</h3>
+
+            <p>
+              Movement Church is committed to Christ-centered biblical
+              teaching, discipleship, spiritual growth and the
+              strengthening of churches and Christian communities.
+            </p>
+
+            <span class="card-link">
+              Official ministry
+            </span>
+          </article>
+
+          <article class="editorial-card" id="aba-academy">
+            <span class="card-number">03</span>
+
+            <h3>ABA Academy</h3>
+
+            <p>
+              ABA Academy is a biblical education initiative created
+              to equip believers and leaders through Scripture,
+              discipleship, prayer and Christian leadership.
+            </p>
+
+            <span class="card-link">
+              Biblical education
+            </span>
+          </article>
+
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Prayer & Intercession</h3>
-        <p>
-          Biblical foundations for prayer, spiritual discipline and a life of intimacy with God.
-        </p>
-        <a href="https://prayerandfire.org" target="_blank" class="small-link">Visit Prayer & Fire →</a>
-      </div>
+    <!-- Book -->
 
-      <div class="card">
-        <h3>Leadership & Discipleship</h3>
-        <p>
-          Equipping leaders, families and churches to grow in faith, character and mission.
-        </p>
-        <a href="#contact" class="small-link">Invite Aline →</a>
-      </div>
+    <section class="section section-dark" id="book">
+      <div class="container book-layout">
 
-    </div>
-
-  </div>
-</section>
-
-<section id="academy" class="section academy">
-  <div class="container two-col">
-
-    <div>
-      <span class="academy-badge">ABA Academy</span>
-      <h2>Abba Biblical Academy</h2>
-
-      <p>
-        ABA Academy is a biblical training platform created to equip leaders,
-        disciples and churches through courses in prayer, identity, leadership,
-        discipleship and missions.
-      </p>
-
-      <p>
-        A school for believers who want to grow in the Word, serve with maturity
-        and impact the nations with the message of Christ.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contact" class="btn primary">Join the Academy</a>
-        <a href="#contact" class="btn secondary">Request Information</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Courses Coming Soon</h3>
-      <p>📖 Foundations of the Christian Faith</p>
-      <p>🙏 Prayer School</p>
-      <p>🔥 Identity & Purpose</p>
-      <p>🤝 Leadership Development</p>
-      <p>🌍 Missions & Discipleship</p>
-      <p>🎓 Certificates for completed courses</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="book" class="section dark">
-  <div class="container center">
-
-    <span class="eyebrow">Featured Book</span>
-
-    <h2>Voice Within</h2>
-
-    <p style="color:#d8b93f;font-weight:850;font-size:24px;">
-      The Secrets of an Activated Identity
-    </p>
-
-    <div class="book-cover">
-      <a href="https://a.co/d/01tmIqQT" target="_blank">
-        <img src="book-cover.JPG" alt="Voice Within Book Cover by Aline Ramiro">
-      </a>
-    </div>
-
-    <p class="book-rating">
-      ★★★★★ 5.0 Rating on Amazon
-    </p>
-
-    <p>
-      A powerful book about identity, purpose, intimacy with God and discovering the voice
-      that awakens destiny from within.
-    </p>
-
-    <a href="https://a.co/d/01tmIqQT" target="_blank" class="btn amazon">
-      Buy on Amazon
-    </a>
-
-  </div>
-</section>
-
-<section id="ministry" class="section light">
-  <div class="container">
-
-    <span class="eyebrow">Ministry</span>
-    <h2 class="center-title">Ministry & Projects</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>
-          <a href="https://prayerandfire.org" target="_blank" class="card-title-link">
-            Prayer & Fire
+        <div class="book-cover">
+          <a
+            href="https://a.co/d/01tmIqQT"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buy Voz Interior on Amazon"
+          >
+            <img
+              src="book-cover.JPG"
+              alt="Voz Interior book cover by Aline Ramiro"
+              width="700"
+              height="1000"
+            >
           </a>
-        </h3>
-        <p>
-          A global movement of prayer, intercession, discipleship and missions.
-        </p>
-        <a href="https://prayerandfire.org" target="_blank" class="small-link">
-          Visit website →
-        </a>
+        </div>
+
+        <div class="book-copy">
+          <span class="section-label">Featured Book</span>
+
+          <h2>Voz Interior</h2>
+
+          <p class="book-subtitle">
+            Os Segredos de Uma Identidade Ativada
+          </p>
+
+          <p class="rating">
+            ★★★★★ 5.0 rating on Amazon
+          </p>
+
+          <p class="book-description">
+            A Christian book about identity, purpose, intimacy with God
+            and recognizing the inner voice that awakens faith,
+            transformation and spiritual destiny.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="https://a.co/d/01tmIqQT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Book on Amazon
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABA Academy -->
+
+    <section class="section section-soft">
+      <div class="container academy-layout">
+
+        <div>
+          <span class="section-label">Biblical Education</span>
+
+          <h2 class="section-title">
+            ABA Academy
+          </h2>
+
+          <p class="section-intro">
+            A biblical formation initiative focused on equipping
+            believers, disciples and Christian leaders with strong
+            foundations in Scripture, prayer and spiritual maturity.
+          </p>
+        </div>
+
+        <div class="academy-panel">
+          <ul>
+            <li>Biblical foundations</li>
+            <li>Identity in Christ</li>
+            <li>Prayer and spiritual formation</li>
+            <li>Christian leadership</li>
+            <li>Discipleship and missions</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand">ALINE RAMIRO</div>
+
+          <p>
+            Official website of Aline Ramiro, Bible teacher,
+            Christian author and ministry leader.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+
+          <div class="footer-links">
+            <a href="#biography">Biography</a>
+            <a href="#book">Voz Interior</a>
+            <a href="#aba-academy">ABA Academy</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Official Ministries</h3>
+
+          <div class="footer-links">
+            <a
+              href="https://prayerandfire.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Prayer & Fire
+            </a>
+
+            <a href="#movement-church">
+              Movement Church
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>Global Movement Church</h3>
-        <p>
-          Serving churches and communities with biblical vision, leadership and global connection.
-        </p>
-        <a href="#contact" class="small-link">
-          Connect for more →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>ABA Academy</h3>
-        <p>
-          A biblical academy for discipleship, leadership training and spiritual formation.
-        </p>
-        <a href="#academy" class="small-link">
-          Explore academy →
-        </a>
+      <div class="copyright">
+        © 2026 Aline Ramiro. Official website. All rights reserved.
       </div>
 
     </div>
+  </footer>
 
-  </div>
-</section>
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+    const menuLinks = document.querySelectorAll(".menu a");
 
-<section id="networks" class="section blue">
-  <div class="container">
+    function closeMenu() {
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "☰";
+    }
 
-    <span class="eyebrow">Official Networks</span>
-    <h2 class="center-title">Official Ministries & Social Links</h2>
+    menuButton.addEventListener("click", function () {
+      const isOpen = menu.classList.toggle("active");
 
-    <div class="cards official-cards">
+      document.body.classList.toggle("menu-open", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
 
-      <div class="card">
-        <h3>Prayer & Fire</h3>
-        <p>
-          Global prayer, intercession, discipleship and missions movement.
-        </p>
-        <a href="https://prayerandfire.org" target="_blank" class="btn primary">
-          Visit Website
-        </a>
-        <a href="https://www.instagram.com/prayerandfireglobal" target="_blank" class="small-link">
-          Instagram @prayerandfireglobal →
-        </a>
-      </div>
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
 
-      <div class="card">
-        <h3>SELO Prayer & Fire</h3>
-        <p>
-          Publishing, literature, book club and Christian learning initiatives.
-        </p>
-        <a href="https://www.instagram.com/seloprayerandfire" target="_blank" class="btn primary">
-          Visit Instagram
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Aline Ramiro</h3>
-        <p>
-          Official Instagram profile of Aline Ramiro.
-        </p>
-        <a href="https://www.instagram.com/alineramiror" target="_blank" class="btn primary">
-          Visit Instagram
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section id="contact" class="section contact">
-  <div class="container center">
-
-    <span class="eyebrow">Contact</span>
-
-    <h2>Connect with Aline</h2>
-
-    <p>
-      For ministry, books, speaking invitations, ABA Academy and global projects.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="mailto:alineramirocontact@gmail.com" class="btn primary">
-        Email
-      </a>
-
-      <a href="https://www.instagram.com/alineramiror" target="_blank" class="btn secondary">
-        Instagram
-      </a>
-
-      <a href="https://wa.me/18572612862" target="_blank" class="btn secondary">
-        WhatsApp
-      </a>
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <p>
-    © 2026 Aline Ramiro. Official Website.
-  </p>
-
-  <p>
-    <a href="https://alineramiro.com">AlineRamiro.com</a>
-    ·
-    <a href="https://prayerandfire.org" target="_blank">PrayerandFire.org</a>
-    ·
-    <a href="https://www.instagram.com/alineramiror" target="_blank">Instagram</a>
-    ·
-    <a href="#academy">ABA Academy</a>
-  </p>
-</footer>
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 960) {
+        closeMenu();
+      }
+    });
+  </script>
 
 </body>
 </html>
