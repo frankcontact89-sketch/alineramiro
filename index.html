@@ -61,7 +61,7 @@
       backdrop-filter:blur(18px);
     }
     .nav{
-      min-height:88px;
+      min-height:78px;
       display:flex;align-items:center;justify-content:space-between;
       gap:24px;
     }
@@ -78,13 +78,13 @@
     .desktop-menu a:hover{color:var(--blue)}
     .header-actions{display:flex;align-items:center;gap:12px}
     .language-select{
-      min-height:42px;padding:0 34px 0 12px;
+      min-height:39px;padding:0 32px 0 12px;
       border:1px solid var(--border);border-radius:999px;
       background:#fff;color:var(--ink);
       cursor:pointer;font-size:12px;font-weight:900;
     }
     .menu-toggle{
-      display:none;width:50px;height:50px;
+      display:none;width:46px;height:46px;
       border:1px solid var(--border);border-radius:50%;
       background:#fff;color:var(--ink);cursor:pointer;font-size:22px;
     }
@@ -92,7 +92,7 @@
     .mobile-menu{
       position:fixed;inset:0;z-index:999;
       display:none;overflow-y:auto;
-      padding:135px 6% 48px;background:#fff;
+      padding:115px 6% 45px;background:#fff;
     }
     .mobile-menu.active{display:block}
     .mobile-menu a{
@@ -101,7 +101,7 @@
       font-size:17px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;
     }
 
-    .section{padding:82px 0}
+    .section{padding:76px 0}
     .section-soft{background:var(--soft)}
     .section-dark{background:var(--navy);color:#fff}
     .section-label{
@@ -140,9 +140,9 @@
       color:#fff;
     }
     .hero-grid{
-      display:grid;min-height:590px;
+      display:grid;min-height:545px;
       grid-template-columns:1.05fr .95fr;
-      gap:58px;align-items:center;padding:66px 0;
+      gap:54px;align-items:center;padding:58px 0;
     }
     .hero h1{
       margin-bottom:20px;
@@ -156,7 +156,7 @@
     }
     .hero-copy{max-width:650px;color:#d5e4f4;font-size:18px}
     .hero .actions{max-width:280px}
-    .hero-photo-card{max-width:390px;margin-left:auto}
+    .hero-photo-card{max-width:355px;margin-left:auto}
     .hero-photo-frame{
       overflow:hidden;padding:9px;
       border:1px solid rgba(255,255,255,.16);
@@ -164,7 +164,7 @@
       box-shadow:0 30px 70px rgba(0,0,0,.34);
     }
     .hero-photo{
-      height:450px;object-fit:cover;object-position:center top;
+      height:405px;object-fit:cover;object-position:center top;
     }
     .hero-caption{padding:17px 19px;background:#fff;color:var(--ink)}
     .hero-caption strong{
@@ -176,7 +176,7 @@
     .bio{max-width:830px}
     .bio p{margin-bottom:19px;color:var(--text);font-size:18px}
 
-    .impact{padding:54px 0;background:var(--blue);color:#fff}
+    .impact{padding:48px 0;background:var(--blue);color:#fff}
     .impact-grid{
       display:grid;grid-template-columns:repeat(3,1fr);
       gap:20px;text-align:center;
@@ -191,8 +191,8 @@
     .section-heading{max-width:820px;margin:0 auto 42px;text-align:center}
     .ministry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .ministry-card{
-      display:flex;min-height:310px;flex-direction:column;
-      padding:30px;border:1px solid var(--border);
+      display:flex;min-height:255px;flex-direction:column;
+      padding:27px;border:1px solid var(--border);
       background:#fff;box-shadow:var(--shadow);
     }
     .ministry-card h3{
@@ -211,13 +211,13 @@
       gap:62px;align-items:center;
     }
     .book-cover-frame{
-      width:min(235px,64vw);margin:auto;padding:10px;
+      width:min(220px,60vw);margin:auto;padding:9px;
       border:1px solid rgba(255,255,255,.15);
       background:rgba(255,255,255,.05);
       box-shadow:0 24px 55px rgba(0,0,0,.3);
     }
     .book-cover-frame img{
-      width:100%;height:auto;max-height:390px;object-fit:contain;
+      width:100%;height:auto;max-height:365px;object-fit:contain;
     }
     .book-copy h2{
       margin-bottom:12px;
@@ -231,20 +231,10 @@
     .academy{max-width:830px}
     .academy p{color:var(--text);font-size:18px}
 
-    .links-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .link-card{
-      padding:32px;border:1px solid var(--border);
-      background:#fff;box-shadow:var(--shadow);
-    }
-    .link-card h3{
-      margin-bottom:10px;font-family:Georgia,"Times New Roman",serif;font-size:29px;
-    }
-    .link-card p{margin-bottom:21px;color:var(--text)}
-
-    .footer{padding:54px 0 28px;background:#020b14;color:#b8c8d9}
+    .footer{padding:46px 0 25px;background:#020b14;color:#b8c8d9}
     .footer-grid{
-      display:grid;grid-template-columns:1.3fr 1fr 1fr;
-      gap:42px;padding-bottom:38px;
+      display:grid;grid-template-columns:1.4fr 1fr;
+      gap:42px;padding-bottom:32px;
     }
     .footer-brand{
       margin-bottom:13px;color:#fff;font-size:20px;font-weight:950;letter-spacing:3px;
@@ -267,32 +257,33 @@
         display:inline-flex;align-items:center;justify-content:center;
       }
       .hero-grid,.book-grid,.footer-grid{grid-template-columns:1fr}
-      .hero-grid{min-height:auto;padding:56px 0 68px}
-      .hero-photo-card{width:100%;max-width:430px;margin:8px auto 0}
-      .hero-photo{height:480px}
-      .ministry-grid,.impact-grid,.links-grid{grid-template-columns:1fr}
+      .hero-grid{min-height:auto;padding:52px 0 62px}
+      .hero-photo-card{width:100%;max-width:390px;margin:6px auto 0}
+      .hero-photo{height:430px}
+      .ministry-grid,.impact-grid{grid-template-columns:1fr}
+      .ministry-card{min-height:auto}
     }
 
     @media(max-width:600px){
       html{scroll-padding-top:88px}
-      .nav{min-height:82px}
+      .nav{min-height:74px}
       .brand-name{font-size:18px;letter-spacing:3px}
       .brand-subtitle{font-size:8px;letter-spacing:1.9px}
       .language-select{
-        min-height:40px;max-width:72px;padding-left:10px;font-size:11px;
+        min-height:37px;max-width:68px;padding-left:9px;font-size:11px;
       }
-      .menu-toggle{width:47px;height:47px}
-      .mobile-menu{padding-top:125px}
+      .menu-toggle{width:44px;height:44px}
+      .mobile-menu{padding-top:108px}
       .hero h1{font-size:54px;letter-spacing:-2px}
-      .hero-photo{height:500px}
-      .section{padding:64px 0}
+      .hero-photo{height:405px}
+      .section{padding:60px 0}
       .section-title{font-size:42px}
       .actions{display:grid}
       .button{width:100%}
-      .ministry-card,.link-card{padding:26px 23px}
+      .ministry-card{padding:24px 22px}
       .book-grid{gap:34px}
-      .book-cover-frame{width:min(215px,62vw)}
-      .book-copy h2{font-size:50px}
+      .book-cover-frame{width:min(200px,58vw)}
+      .book-copy h2{font-size:48px}
     }
   </style>
 
@@ -358,7 +349,6 @@
         <a href="#ministries" data-i18n="navMinistries">Ministries</a>
         <a href="#book" data-i18n="navBook">Book</a>
         <a href="#academy" data-i18n="navAcademy">ABA Academy</a>
-        <a href="#links" data-i18n="navLinks">Official Links</a>
       </nav>
 
       <div class="header-actions">
@@ -378,7 +368,6 @@
     <a href="#ministries" data-i18n="navMinistries">Ministries</a>
     <a href="#book" data-i18n="navBook">Book</a>
     <a href="#academy" data-i18n="navAcademy">ABA Academy</a>
-    <a href="#links" data-i18n="navLinks">Official Links</a>
   </nav>
 
   <main>
@@ -571,54 +560,6 @@
         </p>
       </div>
     </section>
-
-    <section class="section" id="links">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-label" data-i18n="linksLabel">Connect</span>
-          <h2 class="section-title" data-i18n="linksTitle">Official Links</h2>
-          <p class="section-intro" data-i18n="linksIntro">Visit the official ministry accounts.</p>
-        </div>
-
-        <div class="links-grid">
-          <article class="link-card">
-            <h3>Prayer & Fire</h3>
-            <p data-i18n="prayerFireLinksText">Official website and Instagram account.</p>
-
-            <div class="actions">
-              <a
-                class="button button-primary"
-                href="https://prayerandfire.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="website"
-              >Website</a>
-
-              <a
-                class="button button-dark"
-                href="https://www.instagram.com/prayerandfireglobal/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Instagram</a>
-            </div>
-          </article>
-
-          <article class="link-card">
-            <h3>Movement Church</h3>
-            <p data-i18n="movementLinksText">Official Instagram account for church services and updates.</p>
-
-            <div class="actions">
-              <a
-                class="button button-dark"
-                href="https://www.instagram.com/movementchurch.global/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Instagram</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -629,15 +570,6 @@
           <p data-i18n="footerDescription">
             Official website of Aline Ramiro, Christian author and Bible teacher.
           </p>
-        </div>
-
-        <div>
-          <h3 data-i18n="footerExplore">Explore</h3>
-          <div class="footer-links">
-            <a href="#biography" data-i18n="navBiography">Biography</a>
-            <a href="#book">Voz Interior</a>
-            <a href="#academy">ABA Academy</a>
-          </div>
         </div>
 
         <div>
@@ -668,7 +600,6 @@
         navMinistries:"Ministries",
         navBook:"Book",
         navAcademy:"ABA Academy",
-        navLinks:"Official Links",
         heroLead:"Christian author and Bible teacher.",
         heroCopy:"Helping believers understand Scripture, discover their identity in Christ and grow in spiritual maturity.",
         readBiography:"Read Biography",
@@ -697,14 +628,7 @@
         viewAmazon:"View Book on Amazon",
         academyLabel:"Biblical Education",
         academyDescription:"ABA Academy exists to equip believers and Christian leaders with strong biblical foundations for spiritual maturity, discipleship and faithful service.",
-        linksLabel:"Connect",
-        linksTitle:"Official Links",
-        linksIntro:"Visit the official ministry accounts.",
-        prayerFireLinksText:"Official website and Instagram account.",
-        movementLinksText:"Official Instagram account for church services and updates.",
-        website:"Website",
         footerDescription:"Official website of Aline Ramiro, Christian author and Bible teacher.",
-        footerExplore:"Explore",
         footerMinistries:"Official Ministries",
         copyright:"© 2026 Aline Ramiro. Official website. All rights reserved.",
         openMenu:"Open menu",
@@ -722,7 +646,6 @@
         navMinistries:"Ministérios",
         navBook:"Livro",
         navAcademy:"ABA Academy",
-        navLinks:"Links Oficiais",
         heroLead:"Autora cristã e professora da Bíblia.",
         heroCopy:"Ajudando pessoas a compreender as Escrituras, descobrir sua identidade em Cristo e crescer em maturidade espiritual.",
         readBiography:"Ler Biografia",
@@ -751,14 +674,7 @@
         viewAmazon:"Ver Livro na Amazon",
         academyLabel:"Educação Bíblica",
         academyDescription:"A ABA Academy existe para capacitar cristãos e líderes com fundamentos bíblicos sólidos para a maturidade espiritual, o discipulado e o serviço fiel.",
-        linksLabel:"Conecte-se",
-        linksTitle:"Links Oficiais",
-        linksIntro:"Visite as contas oficiais dos ministérios.",
-        prayerFireLinksText:"Site oficial e conta no Instagram.",
-        movementLinksText:"Conta oficial no Instagram para cultos, ensinamentos e atualizações.",
-        website:"Site",
         footerDescription:"Site oficial de Aline Ramiro, autora cristã e professora da Bíblia.",
-        footerExplore:"Explorar",
         footerMinistries:"Ministérios Oficiais",
         copyright:"© 2026 Aline Ramiro. Site oficial. Todos os direitos reservados.",
         openMenu:"Abrir menu",
@@ -837,4 +753,3 @@
   </script>
 </body>
 </html>
-
