@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <title>Aline Ramiro | Official Website</title>
 
   <meta name="description" content="Official website of Aline Ramiro, Christian author and Bible teacher. Discover her biography, Voz Interior, Prayer & Fire, Movement Church and ABA Academy.">
@@ -12,14 +13,22 @@
   <meta name="theme-color" content="#061525">
 
   <link rel="canonical" href="https://alineramiro.com/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="shortcut icon" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Aline Ramiro">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Social sharing -->
   <meta property="og:title" content="Aline Ramiro | Official Website">
   <meta property="og:description" content="Discover Aline Ramiro’s biography, book and official ministry connections.">
   <meta property="og:image" content="https://alineramiro.com/aline.jpg">
-  <meta property="og:image:alt" content="Aline Ramiro">
+  <meta property="og:image:secure_url" content="https://alineramiro.com/aline.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Aline Ramiro, Christian author and Bible teacher">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://alineramiro.com/">
   <meta property="og:site_name" content="Aline Ramiro">
@@ -40,7 +49,12 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:104px}
+
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top:104px;
+    }
+
     body{
       overflow-x:hidden;
       background:var(--white);
@@ -48,89 +62,208 @@
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
       line-height:1.65;
     }
+
     body.menu-open{overflow:hidden}
-    img{display:block;width:100%;max-width:100%}
-    a{color:inherit;text-decoration:none}
+
+    img{
+      display:block;
+      width:100%;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
     button,select{font:inherit}
-    .container{width:min(1140px,91%);margin:auto}
+
+    .container{
+      width:min(1140px,91%);
+      margin:auto;
+    }
 
     .site-header{
-      position:sticky;top:0;z-index:1000;
+      position:sticky;
+      top:0;
+      z-index:1000;
       border-bottom:1px solid var(--border);
       background:rgba(255,255,255,.97);
       backdrop-filter:blur(18px);
     }
+
     .nav{
       min-height:78px;
-      display:flex;align-items:center;justify-content:space-between;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       gap:24px;
     }
-    .brand{display:inline-flex;flex-direction:column;line-height:1}
-    .brand-name{font-size:22px;font-weight:950;letter-spacing:4px}
+
+    .brand{
+      display:inline-flex;
+      flex-direction:column;
+      line-height:1;
+    }
+
+    .brand-name{
+      font-size:22px;
+      font-weight:950;
+      letter-spacing:4px;
+    }
+
     .brand-subtitle{
-      margin-top:9px;color:var(--blue);
-      font-size:10px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;
+      margin-top:9px;
+      color:var(--blue);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
     }
-    .desktop-menu{display:flex;align-items:center;gap:22px}
+
+    .desktop-menu{
+      display:flex;
+      align-items:center;
+      gap:22px;
+    }
+
     .desktop-menu a{
-      font-size:12px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.6px;
+      text-transform:uppercase;
     }
+
     .desktop-menu a:hover{color:var(--blue)}
-    .header-actions{display:flex;align-items:center;gap:12px}
-    .language-select{
-      min-height:39px;padding:0 32px 0 12px;
-      border:1px solid var(--border);border-radius:999px;
-      background:#fff;color:var(--ink);
-      cursor:pointer;font-size:12px;font-weight:900;
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
+
+    .language-select{
+      min-height:39px;
+      padding:0 32px 0 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      color:var(--ink);
+      cursor:pointer;
+      font-size:12px;
+      font-weight:900;
+    }
+
     .menu-toggle{
-      display:none;width:46px;height:46px;
-      border:1px solid var(--border);border-radius:50%;
-      background:#fff;color:var(--ink);cursor:pointer;font-size:22px;
+      display:none;
+      width:46px;
+      height:46px;
+      border:1px solid var(--border);
+      border-radius:50%;
+      background:#fff;
+      color:var(--ink);
+      cursor:pointer;
+      font-size:22px;
     }
 
     .mobile-menu{
-      position:fixed;inset:0;z-index:999;
-      display:none;overflow-y:auto;
-      padding:115px 6% 45px;background:#fff;
+      position:fixed;
+      inset:0;
+      z-index:999;
+      display:none;
+      overflow-y:auto;
+      padding:115px 6% 45px;
+      background:#fff;
     }
+
     .mobile-menu.active{display:block}
+
     .mobile-menu a{
-      display:block;padding:21px 0;
+      display:block;
+      padding:21px 0;
       border-bottom:1px solid var(--border);
-      font-size:17px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;
+      font-size:17px;
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
     }
 
     .section{padding:76px 0}
+
     .section-soft{background:var(--soft)}
-    .section-dark{background:var(--navy);color:#fff}
-    .section-label{
-      display:inline-block;margin-bottom:14px;color:var(--blue);
-      font-size:12px;font-weight:950;letter-spacing:2.6px;text-transform:uppercase;
+
+    .section-dark{
+      background:var(--navy);
+      color:#fff;
     }
+
+    .section-label{
+      display:inline-block;
+      margin-bottom:14px;
+      color:var(--blue);
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:2.6px;
+      text-transform:uppercase;
+    }
+
     .section-dark .section-label{color:#80b8ff}
+
     .section-title{
       margin-bottom:18px;
       font-family:Georgia,"Times New Roman",serif;
       font-size:clamp(38px,6vw,60px);
-      letter-spacing:-1.4px;line-height:1.03;
+      letter-spacing:-1.4px;
+      line-height:1.03;
     }
+
     .section-dark .section-title{color:#fff}
-    .section-intro{max-width:760px;color:var(--text);font-size:18px}
+
+    .section-intro{
+      max-width:760px;
+      color:var(--text);
+      font-size:18px;
+    }
 
     .button{
-      display:inline-flex;min-height:50px;
-      align-items:center;justify-content:center;
-      padding:13px 22px;border:1px solid transparent;border-radius:8px;
-      font-size:14px;font-weight:900;text-align:center;
+      display:inline-flex;
+      min-height:50px;
+      align-items:center;
+      justify-content:center;
+      padding:13px 22px;
+      border:1px solid transparent;
+      border-radius:8px;
+      font-size:14px;
+      font-weight:900;
+      text-align:center;
       transition:.2s ease;
     }
+
     .button:hover{transform:translateY(-2px)}
-    .button-primary{background:var(--blue);color:#fff}
+
+    .button-primary{
+      background:var(--blue);
+      color:#fff;
+    }
+
     .button-primary:hover{background:var(--blueDark)}
-    .button-dark{background:var(--ink);color:#fff}
-    .amazon-button{background:#ff9900;color:#171717}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+    .button-dark{
+      background:var(--ink);
+      color:#fff;
+    }
+
+    .amazon-button{
+      background:#ff9900;
+      color:#171717;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
 
     .hero{
       overflow:hidden;
@@ -139,150 +272,359 @@
         linear-gradient(135deg,var(--navy),var(--navy2));
       color:#fff;
     }
+
     .hero-grid{
-      display:grid;min-height:545px;
+      display:grid;
+      min-height:545px;
       grid-template-columns:1.05fr .95fr;
-      gap:54px;align-items:center;padding:58px 0;
+      gap:54px;
+      align-items:center;
+      padding:58px 0;
     }
+
     .hero h1{
       margin-bottom:20px;
       font-family:Georgia,"Times New Roman",serif;
       font-size:clamp(54px,8vw,90px);
-      letter-spacing:-3px;line-height:.95;
+      letter-spacing:-3px;
+      line-height:.95;
     }
+
     .hero-lead{
-      max-width:630px;margin-bottom:16px;color:#9bc8ff;
-      font-size:clamp(21px,3vw,29px);font-weight:800;line-height:1.28;
+      max-width:630px;
+      margin-bottom:16px;
+      color:#9bc8ff;
+      font-size:clamp(21px,3vw,29px);
+      font-weight:800;
+      line-height:1.28;
     }
-    .hero-copy{max-width:650px;color:#d5e4f4;font-size:18px}
+
+    .hero-copy{
+      max-width:650px;
+      color:#d5e4f4;
+      font-size:18px;
+    }
+
     .hero .actions{max-width:280px}
-    .hero-photo-card{max-width:355px;margin-left:auto}
+
+    .hero-photo-card{
+      max-width:355px;
+      margin-left:auto;
+    }
+
     .hero-photo-frame{
-      overflow:hidden;padding:9px;
+      overflow:hidden;
+      padding:9px;
       border:1px solid rgba(255,255,255,.16);
       background:rgba(255,255,255,.06);
       box-shadow:0 30px 70px rgba(0,0,0,.34);
     }
+
     .hero-photo{
-      height:405px;object-fit:cover;object-position:center top;
+      height:405px;
+      object-fit:cover;
+      object-position:center top;
     }
-    .hero-caption{padding:17px 19px;background:#fff;color:var(--ink)}
+
+    .hero-caption{
+      padding:17px 19px;
+      background:#fff;
+      color:var(--ink);
+    }
+
     .hero-caption strong{
-      display:block;color:var(--blue);
-      font-size:13px;letter-spacing:1.3px;text-transform:uppercase;
+      display:block;
+      color:var(--blue);
+      font-size:13px;
+      letter-spacing:1.3px;
+      text-transform:uppercase;
     }
-    .hero-caption span{display:block;margin-top:3px;font-size:15px;font-weight:800}
+
+    .hero-caption span{
+      display:block;
+      margin-top:3px;
+      font-size:15px;
+      font-weight:800;
+    }
 
     .bio{max-width:830px}
-    .bio p{margin-bottom:19px;color:var(--text);font-size:18px}
 
-    .impact{padding:48px 0;background:var(--blue);color:#fff}
+    .bio p{
+      margin-bottom:19px;
+      color:var(--text);
+      font-size:18px;
+    }
+
+    .impact{
+      padding:48px 0;
+      background:var(--blue);
+      color:#fff;
+    }
+
     .impact-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);
-      gap:20px;text-align:center;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      text-align:center;
     }
-    .impact-item{padding:22px;border:1px solid rgba(255,255,255,.22)}
-    .impact-item strong{
-      display:block;margin-bottom:4px;
-      font-family:Georgia,"Times New Roman",serif;font-size:42px;
-    }
-    .impact-item span{color:#dbeaff;font-size:14px;font-weight:800}
 
-    .section-heading{max-width:820px;margin:0 auto 42px;text-align:center}
-    .ministry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .impact-item{
+      padding:22px;
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .impact-item strong{
+      display:block;
+      margin-bottom:4px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:42px;
+    }
+
+    .impact-item span{
+      color:#dbeaff;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .section-heading{
+      max-width:820px;
+      margin:0 auto 42px;
+      text-align:center;
+    }
+
+    .ministry-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
     .ministry-card{
-      display:flex;min-height:255px;flex-direction:column;
-      padding:27px;border:1px solid var(--border);
-      background:#fff;box-shadow:var(--shadow);
+      display:flex;
+      min-height:255px;
+      flex-direction:column;
+      padding:27px;
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow:var(--shadow);
     }
+
     .ministry-card h3{
-      margin-bottom:13px;font-family:Georgia,"Times New Roman",serif;
-      font-size:29px;line-height:1.12;
+      margin-bottom:13px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:29px;
+      line-height:1.12;
     }
-    .ministry-card p{margin-bottom:22px;color:var(--text);font-size:16px}
-    .card-actions{display:grid;gap:10px;margin-top:auto}
+
+    .ministry-card p{
+      margin-bottom:22px;
+      color:var(--text);
+      font-size:16px;
+    }
+
+    .card-actions{
+      display:grid;
+      gap:10px;
+      margin-top:auto;
+    }
+
     .card-link{
-      color:var(--blue);font-size:13px;font-weight:900;
-      letter-spacing:.4px;text-transform:uppercase;
+      color:var(--blue);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.4px;
+      text-transform:uppercase;
     }
 
     .book-grid{
-      display:grid;grid-template-columns:.72fr 1.28fr;
-      gap:62px;align-items:center;
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:62px;
+      align-items:center;
     }
+
     .book-cover-frame{
-      width:min(220px,60vw);margin:auto;padding:9px;
+      width:min(220px,60vw);
+      margin:auto;
+      padding:9px;
       border:1px solid rgba(255,255,255,.15);
       background:rgba(255,255,255,.05);
       box-shadow:0 24px 55px rgba(0,0,0,.3);
     }
+
     .book-cover-frame img{
-      width:100%;height:auto;max-height:365px;object-fit:contain;
+      width:100%;
+      height:auto;
+      max-height:365px;
+      object-fit:contain;
     }
+
     .book-copy h2{
       margin-bottom:12px;
       font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(46px,7vw,68px);line-height:1;
+      font-size:clamp(46px,7vw,68px);
+      line-height:1;
     }
-    .book-subtitle{margin-bottom:20px;color:#83baff;font-size:21px;font-weight:800}
-    .rating{margin-bottom:20px;color:var(--gold);font-size:19px;font-weight:900}
-    .book-description{max-width:650px;color:#c7d8e9;font-size:18px}
+
+    .book-subtitle{
+      margin-bottom:20px;
+      color:#83baff;
+      font-size:21px;
+      font-weight:800;
+    }
+
+    .rating{
+      margin-bottom:20px;
+      color:var(--gold);
+      font-size:19px;
+      font-weight:900;
+    }
+
+    .book-description{
+      max-width:650px;
+      color:#c7d8e9;
+      font-size:18px;
+    }
 
     .academy{max-width:830px}
-    .academy p{color:var(--text);font-size:18px}
 
-    .footer{padding:46px 0 25px;background:#020b14;color:#b8c8d9}
+    .academy p{
+      color:var(--text);
+      font-size:18px;
+    }
+
+    .footer{
+      padding:46px 0 25px;
+      background:#020b14;
+      color:#b8c8d9;
+    }
+
     .footer-grid{
-      display:grid;grid-template-columns:1.4fr 1fr;
-      gap:42px;padding-bottom:32px;
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:42px;
+      padding-bottom:32px;
     }
+
     .footer-brand{
-      margin-bottom:13px;color:#fff;font-size:20px;font-weight:950;letter-spacing:3px;
+      margin-bottom:13px;
+      color:#fff;
+      font-size:20px;
+      font-weight:950;
+      letter-spacing:3px;
     }
+
     .footer h3{
-      margin-bottom:14px;color:#fff;font-size:13px;
-      letter-spacing:1.1px;text-transform:uppercase;
+      margin-bottom:14px;
+      color:#fff;
+      font-size:13px;
+      letter-spacing:1.1px;
+      text-transform:uppercase;
     }
-    .footer-links{display:grid;gap:10px}
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
     .footer a:hover{color:#8fc0ff}
+
     .copyright{
-      padding-top:22px;border-top:1px solid rgba(255,255,255,.1);
-      text-align:center;font-size:13px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.1);
+      text-align:center;
+      font-size:13px;
     }
 
     @media(max-width:960px){
       .desktop-menu{display:none}
+
       .menu-toggle{
-        position:relative;z-index:1001;
-        display:inline-flex;align-items:center;justify-content:center;
+        position:relative;
+        z-index:1001;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
       }
-      .hero-grid,.book-grid,.footer-grid{grid-template-columns:1fr}
-      .hero-grid{min-height:auto;padding:52px 0 62px}
-      .hero-photo-card{width:100%;max-width:390px;margin:6px auto 0}
+
+      .hero-grid,
+      .book-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-grid{
+        min-height:auto;
+        padding:52px 0 62px;
+      }
+
+      .hero-photo-card{
+        width:100%;
+        max-width:390px;
+        margin:6px auto 0;
+      }
+
       .hero-photo{height:430px}
-      .ministry-grid,.impact-grid{grid-template-columns:1fr}
+
+      .ministry-grid,
+      .impact-grid{
+        grid-template-columns:1fr;
+      }
+
       .ministry-card{min-height:auto}
     }
 
     @media(max-width:600px){
       html{scroll-padding-top:88px}
+
       .nav{min-height:74px}
-      .brand-name{font-size:18px;letter-spacing:3px}
-      .brand-subtitle{font-size:8px;letter-spacing:1.9px}
-      .language-select{
-        min-height:37px;max-width:68px;padding-left:9px;font-size:11px;
+
+      .brand-name{
+        font-size:18px;
+        letter-spacing:3px;
       }
-      .menu-toggle{width:44px;height:44px}
+
+      .brand-subtitle{
+        font-size:8px;
+        letter-spacing:1.9px;
+      }
+
+      .language-select{
+        min-height:37px;
+        max-width:68px;
+        padding-left:9px;
+        font-size:11px;
+      }
+
+      .menu-toggle{
+        width:44px;
+        height:44px;
+      }
+
       .mobile-menu{padding-top:108px}
-      .hero h1{font-size:54px;letter-spacing:-2px}
+
+      .hero h1{
+        font-size:54px;
+        letter-spacing:-2px;
+      }
+
       .hero-photo{height:405px}
+
       .section{padding:60px 0}
+
       .section-title{font-size:42px}
+
       .actions{display:grid}
+
       .button{width:100%}
+
       .ministry-card{padding:24px 22px}
+
       .book-grid{gap:34px}
-      .book-cover-frame{width:min(200px,58vw)}
+
+      .book-cover-frame{
+        width:min(200px,58vw);
+      }
+
       .book-copy h2{font-size:48px}
     }
   </style>
@@ -357,7 +699,12 @@
           <option value="pt">PT</option>
         </select>
 
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >☰</button>
       </div>
     </div>
   </header>
@@ -375,13 +722,21 @@
       <div class="container hero-grid">
         <div>
           <h1>Aline Ramiro</h1>
-          <p class="hero-lead" data-i18n="heroLead">Christian author and Bible teacher.</p>
+
+          <p class="hero-lead" data-i18n="heroLead">
+            Christian author and Bible teacher.
+          </p>
+
           <p class="hero-copy" data-i18n="heroCopy">
             Helping believers understand Scripture, discover their identity in Christ and grow in spiritual maturity.
           </p>
 
           <div class="actions">
-            <a class="button button-primary" href="#biography" data-i18n="readBiography">Read Biography</a>
+            <a
+              class="button button-primary"
+              href="#biography"
+              data-i18n="readBiography"
+            >Read Biography</a>
           </div>
         </div>
 
@@ -406,8 +761,13 @@
 
     <section class="section section-soft" id="biography">
       <div class="container bio">
-        <span class="section-label" data-i18n="biographyLabel">Biography</span>
-        <h2 class="section-title" data-i18n="aboutTitle">About Aline Ramiro</h2>
+        <span class="section-label" data-i18n="biographyLabel">
+          Biography
+        </span>
+
+        <h2 class="section-title" data-i18n="aboutTitle">
+          About Aline Ramiro
+        </h2>
 
         <p data-i18n="bioOne">
           Aline Ramiro is a Christian author and Bible teacher devoted to helping people understand Scripture, discover their identity in Christ and grow in their relationship with God.
@@ -427,17 +787,23 @@
       <div class="container impact-grid">
         <div class="impact-item">
           <strong>45+</strong>
-          <span data-i18n="impactCountries">Countries represented through the movement</span>
+          <span data-i18n="impactCountries">
+            Countries represented through the movement
+          </span>
         </div>
 
         <div class="impact-item">
           <strong>65+</strong>
-          <span data-i18n="impactChurches">Churches connected through global ministry</span>
+          <span data-i18n="impactChurches">
+            Churches connected through global ministry
+          </span>
         </div>
 
         <div class="impact-item">
           <strong data-i18n="impactGlobalWord">Global</strong>
-          <span data-i18n="impactGlobalText">Prayer, discipleship and biblical formation</span>
+          <span data-i18n="impactGlobalText">
+            Prayer, discipleship and biblical formation
+          </span>
         </div>
       </div>
     </section>
@@ -445,8 +811,14 @@
     <section class="section" id="ministries">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label" data-i18n="ministriesLabel">Featured Ministries</span>
-          <h2 class="section-title" data-i18n="ministriesTitle">Prayer, Church and Biblical Education</h2>
+          <span class="section-label" data-i18n="ministriesLabel">
+            Featured Ministries
+          </span>
+
+          <h2 class="section-title" data-i18n="ministriesTitle">
+            Prayer, Church and Biblical Education
+          </h2>
+
           <p class="section-intro" data-i18n="ministriesIntro">
             Explore the official ministries and initiatives connected with Aline Ramiro.
           </p>
@@ -455,6 +827,7 @@
         <div class="ministry-grid">
           <article class="ministry-card" id="prayer-fire">
             <h3>Prayer & Fire</h3>
+
             <p data-i18n="prayerFireDescription">
               A global Christian movement devoted to prayer, intercession, discipleship, missions and connection among believers and churches.
             </p>
@@ -480,6 +853,7 @@
 
           <article class="ministry-card" id="movement-church">
             <h3>Movement Church</h3>
+
             <p data-i18n="movementDescription">
               A Christ-centered church community focused on biblical teaching, fellowship, spiritual growth and discipleship.
             </p>
@@ -497,12 +871,17 @@
 
           <article class="ministry-card">
             <h3>ABA Academy</h3>
+
             <p data-i18n="academyCardDescription">
               A biblical education initiative created to equip believers and leaders through Scripture, prayer, discipleship and Christian leadership.
             </p>
 
             <div class="card-actions">
-              <a class="card-link" href="#academy" data-i18n="learnMore">Learn More →</a>
+              <a
+                class="card-link"
+                href="#academy"
+                data-i18n="learnMore"
+              >Learn More →</a>
             </div>
           </article>
         </div>
@@ -528,10 +907,19 @@
         </div>
 
         <div class="book-copy">
-          <span class="section-label" data-i18n="bookLabel">Published Work</span>
+          <span class="section-label" data-i18n="bookLabel">
+            Published Work
+          </span>
+
           <h2>Voz Interior</h2>
-          <p class="book-subtitle">Os Segredos de Uma Identidade Ativada</p>
-          <p class="rating" data-i18n="ratingText">★★★★★ 5.0 rating on Amazon</p>
+
+          <p class="book-subtitle">
+            Os Segredos de Uma Identidade Ativada
+          </p>
+
+          <p class="rating" data-i18n="ratingText">
+            ★★★★★ 5.0 rating on Amazon
+          </p>
 
           <p class="book-description" data-i18n="bookDescription">
             A Christian book about identity, purpose, intimacy with God and the spiritual transformation that begins when a person recognizes who they are in Christ.
@@ -552,7 +940,10 @@
 
     <section class="section section-soft" id="academy">
       <div class="container academy">
-        <span class="section-label" data-i18n="academyLabel">Biblical Education</span>
+        <span class="section-label" data-i18n="academyLabel">
+          Biblical Education
+        </span>
+
         <h2 class="section-title">ABA Academy</h2>
 
         <p data-i18n="academyDescription">
@@ -567,16 +958,29 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">ALINE RAMIRO</div>
+
           <p data-i18n="footerDescription">
             Official website of Aline Ramiro, Christian author and Bible teacher.
           </p>
         </div>
 
         <div>
-          <h3 data-i18n="footerMinistries">Official Ministries</h3>
+          <h3 data-i18n="footerMinistries">
+            Official Ministries
+          </h3>
+
           <div class="footer-links">
-            <a href="https://prayerandfire.org/" target="_blank" rel="noopener noreferrer">Prayer & Fire</a>
-            <a href="https://www.instagram.com/movementchurch.global/" target="_blank" rel="noopener noreferrer">Movement Church</a>
+            <a
+              href="https://prayerandfire.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Prayer & Fire</a>
+
+            <a
+              href="https://www.instagram.com/movementchurch.global/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Movement Church</a>
           </div>
         </div>
       </div>
@@ -709,44 +1113,63 @@
       const ogTitle = document.querySelector('meta[property="og:title"]');
       const ogDescription = document.querySelector('meta[property="og:description"]');
 
-      if(description) description.setAttribute("content",dictionary.metaDescription);
-      if(ogTitle) ogTitle.setAttribute("content",dictionary.ogTitle);
-      if(ogDescription) ogDescription.setAttribute("content",dictionary.ogDescription);
+      if(description) {
+        description.setAttribute("content", dictionary.metaDescription);
+      }
+
+      if(ogTitle) {
+        ogTitle.setAttribute("content", dictionary.ogTitle);
+      }
+
+      if(ogDescription) {
+        ogDescription.setAttribute("content", dictionary.ogDescription);
+      }
 
       document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.getAttribute("data-i18n");
-        if(dictionary[key] !== undefined) element.textContent = dictionary[key];
+
+        if(dictionary[key] !== undefined) {
+          element.textContent = dictionary[key];
+        }
       });
 
       const menuIsOpen = mobileMenu.classList.contains("active");
+
       menuButton.setAttribute(
         "aria-label",
         menuIsOpen ? dictionary.closeMenu : dictionary.openMenu
       );
 
       languageSelect.value = lang;
-      localStorage.setItem("alineLanguage",lang);
+      localStorage.setItem("alineLanguage", lang);
     }
 
-    menuButton.addEventListener("click",() => {
+    menuButton.addEventListener("click", () => {
       const lang = localStorage.getItem("alineLanguage") || "en";
       const dictionary = translations[lang];
       const isOpen = mobileMenu.classList.toggle("active");
 
-      document.body.classList.toggle("menu-open",isOpen);
-      menuButton.setAttribute("aria-expanded",String(isOpen));
-      menuButton.setAttribute("aria-label",isOpen ? dictionary.closeMenu : dictionary.openMenu);
+      document.body.classList.toggle("menu-open", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? dictionary.closeMenu : dictionary.openMenu
+      );
       menuButton.textContent = isOpen ? "✕" : "☰";
     });
 
-    mobileLinks.forEach((link) => link.addEventListener("click",closeMenu));
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-    languageSelect.addEventListener("change",(event) => {
+    languageSelect.addEventListener("change", (event) => {
       applyLanguage(event.target.value);
     });
 
-    window.addEventListener("resize",() => {
-      if(window.innerWidth > 960) closeMenu();
+    window.addEventListener("resize", () => {
+      if(window.innerWidth > 960) {
+        closeMenu();
+      }
     });
 
     applyLanguage(localStorage.getItem("alineLanguage") || "en");
