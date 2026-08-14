@@ -3,3 +3,4 @@ Allow: /
 Disallow: /admin.html
 
 Sitemap: https://alineramiro.com/sitemap.xml
+Sitemap: https://alineramiro.com/image-sitemap.xml
