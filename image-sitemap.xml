@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://alineramiro.com/</loc>
+    <image:image>
+      <image:loc>https://alineramiro.com/aline.jpg</image:loc>
+      <image:title>Aline Ramiro official portrait</image:title>
+      <image:caption>Aline Ramiro, Christian pastor, Bible teacher, leadership trainer and author.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alineramiro.com/aline-ramiro.html</loc>
+    <image:image>
+      <image:loc>https://alineramiro.com/aline.jpg</image:loc>
+      <image:title>Aline Ramiro official photo</image:title>
+      <image:caption>Official portrait of Aline Ramiro.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alineramiro.com/voz-interior.html</loc>
+    <image:image>
+      <image:loc>https://alineramiro.com/book-cover.JPG</image:loc>
+      <image:title>Voz Interior by Aline Ramiro</image:title>
+      <image:caption>Official cover of Voz Interior: Os Segredos de Uma Identidade Ativada, by Aline Ramiro.</image:caption>
+    </image:image>
+  </url>
+</urlset>
