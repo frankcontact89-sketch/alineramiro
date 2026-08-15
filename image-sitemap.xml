@@ -13,15 +13,15 @@
     <image:image>
       <image:loc>https://alineramiro.com/aline.jpg</image:loc>
       <image:title>Aline Ramiro official photo</image:title>
-      <image:caption>Official portrait of Aline Ramiro.</image:caption>
+      <image:caption>Official portrait of Aline Ramiro, author of Voz Interior.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://alineramiro.com/voz-interior.html</loc>
     <image:image>
       <image:loc>https://alineramiro.com/book-cover.JPG</image:loc>
-      <image:title>Voz Interior by Aline Ramiro</image:title>
-      <image:caption>Official cover of Voz Interior: Os Segredos de Uma Identidade Ativada, by Aline Ramiro.</image:caption>
+      <image:title>Voz Interior: Os Segredos de Uma Identidade Ativada — Aline Ramiro</image:title>
+      <image:caption>Official book cover of Voz Interior: Os Segredos de Uma Identidade Ativada, written by Aline Ramiro.</image:caption>
     </image:image>
   </url>
 </urlset>
