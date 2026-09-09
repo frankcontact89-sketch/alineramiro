@@ -1,0 +1,64 @@
+name: Remove Pastor and Apostle labels
+
+on:
+  push:
+    paths:
+      - '.github/workflows/remove-pastor-apostle.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove Pastor and Apostle labels from site and SEO
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              'Aline Ramiro | Pastor, Apostle & Leadership Trainer': 'Aline Ramiro | Leader, Teacher & Leadership Trainer',
+              'Christian pastor, apostle, leader, teacher and leadership trainer': 'Christian leader, teacher and leadership trainer',
+              'Christian pastor, apostle, Bible teacher, leadership trainer and author': 'Christian leader, Bible teacher, leadership trainer and author',
+              'Christian pastor, Bible teacher and author': 'Christian leader, Bible teacher and author',
+              '["Christian Pastor","Apostle","Christian Leader","Teacher","Leadership Trainer"]': '["Christian Leader","Teacher","Leadership Trainer"]',
+              '["Christian Pastor","Apostle","Bible Teacher","Leadership Trainer","Author"]': '["Christian Leader","Bible Teacher","Leadership Trainer","Author"]',
+              'Pastor • Apostle • Leader • Teacher & Leadership Trainer': 'Leader • Teacher & Leadership Trainer',
+              'Pastor · Apostle · Leader · Teacher & Leadership Trainer': 'Leader · Teacher & Leadership Trainer',
+              'Pastor, Apostle, Leader, Teacher & Leadership Trainer': 'Leader, Teacher & Leadership Trainer',
+              'pastor, apostle, leader, teacher and leadership trainer': 'leader, teacher and leadership trainer',
+              'pastor, apostle, Bible teacher, leadership trainer and author': 'leader, Bible teacher, leadership trainer and author',
+          }
+
+          for filename in ('index.html', 'aline-ramiro.html'):
+              p = Path(filename)
+              if not p.exists():
+                  continue
+              s = p.read_text(encoding='utf-8')
+              for old, new in replacements.items():
+                  s = s.replace(old, new)
+
+              if filename == 'index.html' and 'role-label-cleanup' not in s:
+                  guard = '''<script id="role-label-cleanup">(()=>{const clean=()=>{const e=document.getElementById('heroRoles');if(!e)return;let t=e.textContent||'';t=t.replace(/\\bPastor\\b\\s*[•·|,]?\\s*/gi,'').replace(/\\bApostle\\b\\s*[•·|,]?\\s*/gi,'').replace(/^\\s*[•·|,]\\s*/,'').replace(/\\s*[•·|,]\\s*$/,'').replace(/\\s{2,}/g,' ').trim();if(e.textContent!==t)e.textContent=t};const start=()=>{const e=document.getElementById('heroRoles');if(!e)return;clean();new MutationObserver(clean).observe(e,{childList:true,characterData:true,subtree:true});setTimeout(clean,250);setTimeout(clean,1000)};document.readyState==='loading'?document.addEventListener('DOMContentLoaded',start):start()})();</script>'''
+                  s = s.replace('</body>', guard + '</body>')
+
+              p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit website cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html aline-ramiro.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Remove Pastor and Apostle labels from Aline website"
+          git push
