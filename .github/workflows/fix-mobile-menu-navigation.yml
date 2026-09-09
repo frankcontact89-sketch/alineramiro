@@ -1,0 +1,63 @@
+name: Fix mobile menu navigation
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-mobile-menu-navigation.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair mobile menu
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='<nav class="mobile" id="mobile"><a href="#home" data-t="home">Home</a><a href="#biography" data-t="bioNav">Biography</a><a href="#ministries" data-t="ministries">Ministries</a><a href="#books" data-t="books">Books</a><a href="#gallery" data-t="gallery">Gallery</a><a href="#training" data-t="training">Training</a></nav>'
+          new='<nav class="mobile" id="mobile"><button type="button" id="mobileBack" aria-label="Close menu" style="border:0;background:#eef4fb;color:#0b1b2d;border-radius:999px;padding:12px 18px;font-weight:900;margin-bottom:12px;font-size:16px">← Back</button><a href="#home" data-t="home">Home</a><a href="#biography" data-t="bioNav">Biography</a><a href="#ministries" data-t="ministries">Ministries</a><a href="#books" data-t="books">Books</a><a href="#gallery" data-t="gallery">Gallery</a><a href="#training" data-t="training">Training</a><a href="/academy.html" style="color:#1765d1">Student Portal →</a></nav>'
+          if old in s:
+              s=s.replace(old,new)
+          else:
+              raise SystemExit('mobile nav block not found')
+          patch='''<script>
+          (function(){
+            const menuBtn=document.getElementById('menu');
+            const mobile=document.getElementById('mobile');
+            const back=document.getElementById('mobileBack');
+            function closeMenu(){ mobile.classList.remove('open'); document.body.style.overflow=''; }
+            function openMenu(){ mobile.classList.add('open'); document.body.style.overflow='hidden'; }
+            if(menuBtn){
+              menuBtn.addEventListener('click',function(e){
+                e.preventDefault(); e.stopImmediatePropagation();
+                mobile.classList.contains('open') ? closeMenu() : openMenu();
+              },true);
+            }
+            if(back){back.addEventListener('click',function(e){e.preventDefault();closeMenu();});}
+            mobile.querySelectorAll('a').forEach(function(a){
+              a.addEventListener('click',function(e){
+                const href=a.getAttribute('href')||'';
+                if(href.startsWith('#')){
+                  e.preventDefault();
+                  const target=document.querySelector(href);
+                  closeMenu();
+                  if(target){setTimeout(function(){target.scrollIntoView({behavior:'smooth',block:'start'});history.replaceState(null,'',href);},30);}
+                }else{
+                  closeMenu();
+                }
+              },true);
+            });
+          })();
+          </script>'''
+          if patch not in s:
+              s=s.replace('</body>',patch+'</body>')
+          p.write_text(s)
+      - name: Commit fix
+        run: |
+          git config user.name "frankcontact89-sketch"
+          git config user.email "frankcontact89@gmail.com"
+          git add index.html
+          git commit -m "Fix mobile menu navigation and back button" || exit 0
+          git push
