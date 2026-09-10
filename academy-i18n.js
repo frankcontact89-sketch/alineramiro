@@ -2,11 +2,13 @@
 const q=id=>document.getElementById(id);
 const T={back:'← Voltar',signout:'Sair',my:'Meu aprendizado',continue:'Continuar aprendendo',up:'A seguir',path:'Caminho do curso',modules:'Módulos',lessons:'Aulas',enrollTitle:'Inscrição necessária',enrollCopy:'Sua conta está pronta, mas este curso ainda não foi ativado para você.',enrollBtn:'Ver opções de inscrição',backCourse:'← Voltar ao curso',complete:'Marcar como concluída',completed:'Concluída ✓',next:'Próxima aula →',transcript:'Transcrição',notes:'Notas',summary:'Resumo',attachments:'Materiais',portal:'Portal do Aluno',authCopy:'Entre para continuar seu programa anual e manter seu progresso sincronizado.',password:'Senha',show:'Mostrar',signin:'Entrar',create:'Criar conta',forgot:'Esqueceu a senha?',settings:'Configurações',account:'CONTA',studentAccount:'Conta do aluno',changePassword:'Alterar senha',language:'IDIOMA',preferred:'Idioma',langHelp:'ABBA Academy está configurada em Português.',access:'ACESSO AO CURSO',active:'Acesso ativo',saveNote:'Salvar nota',notePh:'Escreva suas notas desta aula...',key:'Pontos principais'};
 function txt(id,v){const e=q(id);if(e)e.textContent=v}
+function lockPortugueseSelector(){const sel=q('languageSelect');if(!sel)return;[...sel.options].forEach(o=>{if(o.value!=='pt')o.remove()});sel.value='pt';sel.disabled=true;}
 function apply(){
  document.documentElement.lang='pt';
  localStorage.setItem('abba_lang','pt');
+ localStorage.setItem('abba_caption_lang','pt');
  txt('backHome',T.back);txt('signOutBtn',T.signout);txt('myLearningLabel',T.my);txt('continueLabel',T.continue);txt('upNextLabel',T.up);txt('coursePathLabel',T.path);txt('modulesTitle',T.modules);txt('lessonsTitle',T.lessons);txt('enrollmentTitle',T.enrollTitle);txt('enrollmentCopy',T.enrollCopy);txt('enrollmentBtn',T.enrollBtn);txt('backDashboardBtn',T.backCourse);txt('authTitle',T.portal);txt('authCopy',T.authCopy);txt('passwordLabel',T.password);txt('submitBtn',T.signin);txt('signUpBtn',T.create);txt('forgotBtn',T.forgot);txt('settingsTitle',T.settings);txt('accountLabel',T.account);txt('accountEmailTitle',T.studentAccount);txt('changePasswordLabel',T.changePassword);txt('languageLabel',T.language);txt('preferredLanguageLabel',T.preferred);txt('languageHelp',T.langHelp);txt('accessLabel',T.access);txt('courseAccessStatus',T.active);txt('settingsSignOutBtn',T.signout);txt('saveNoteBtn',T.saveNote);
- const sel=q('languageSelect');if(sel)sel.value='pt';
+ lockPortugueseSelector();
  const note=q('lessonNote');if(note)note.placeholder=T.notePh;
  document.querySelectorAll('.tab').forEach(b=>{const n=b.dataset.tab;if(n==='transcript')b.textContent=T.transcript;if(n==='notes')b.textContent=T.notes;if(n==='summary')b.textContent=T.summary;if(n==='attachments')b.textContent=T.attachments});
  document.querySelectorAll('#summaryContent h4').forEach(e=>e.textContent=T.key);
