@@ -1,0 +1,32 @@
+name: Add ABBA Academy CTA buttons
+on:
+  push:
+    paths:
+      - '.github/workflows/add-academy-cta-buttons.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add Student Portal and Enroll Now buttons
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='<p><a href="/academy.html" style="color:#1765d1;font-weight:900">Student Portal →</a></p>'
+          new='''<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px"><a href="/academy.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:9px;background:#1765d1;color:#fff;font-weight:900">Student Portal</a><a href="/academy-enroll.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:9px;background:#eaf2ff;color:#1765d1;font-weight:900;border:1px solid #cfe0f5">Enroll Now</a></div>'''
+          if old not in s:
+              raise SystemExit('Target ABBA Academy portal link not found')
+          s=s.replace(old,new,1)
+          p.write_text(s)
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Add ABBA Academy portal and enrollment buttons"
+          git push
