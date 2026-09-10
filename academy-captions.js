@@ -5,6 +5,7 @@ let captionLang='pt';
 let activeJob=false;
 let lastLessonKey='';
 let lastAppliedTrackKey='';
+let reloadInProgress=false;
 
 function uiCopy(){
  const l=document.documentElement.lang;
@@ -30,6 +31,7 @@ async function saveUnifiedPreference(lang){
    if(error)console.error('ABBA language preference save failed',error);
  }
  const s=q('captionStatus');if(s)s.textContent=uiCopy().saved;
+ lastLessonKey='';
  await translateCurrent(true);
 }
 window.abbaSetCaptionLanguage=saveUnifiedPreference;
@@ -80,6 +82,12 @@ async function callTranslation(){
  return body;
 }
 
+function trackMatches(tr,lang){
+ const code=(tr.language||'').toLowerCase();
+ const label=(tr.label||'').toLowerCase();
+ return code===lang||code.startsWith(lang+'-')||label===lang||label.includes(lang==='pt'?'portugu':'english');
+}
+
 function chooseExistingTrack(lang){
  const p=q('muxPlayer');
  if(!p)return false;
@@ -88,14 +96,34 @@ function chooseExistingTrack(lang){
    let found=false;
    for(let i=0;i<tracks.length;i++){
      const tr=tracks[i];
-     const code=(tr.language||'').toLowerCase();
-     const label=(tr.label||'').toLowerCase();
-     const match=code===lang||code.startsWith(lang+'-')||label===lang||label.includes(lang==='pt'?'portugu':'english');
+     const match=trackMatches(tr,lang);
      if(tr.kind==='subtitles'||tr.kind==='captions')tr.mode=match?'showing':'disabled';
      if(match)found=true;
    }
    return found;
  }catch{return false}
+}
+
+function reloadPlayerOnceForCaption(lang,key){
+ const p=q('muxPlayer');
+ if(!p||reloadInProgress||!currentLesson?.mux_playback_id)return;
+ reloadInProgress=true;
+ let pos=0,wasPaused=true,volume=1,muted=false;
+ try{pos=Number(p.currentTime)||0;wasPaused=p.paused;volume=p.volume;muted=p.muted}catch{}
+ const playbackId=`${currentLesson.mux_playback_id}?default_subtitles_lang=${encodeURIComponent(lang)}`;
+ const restore=()=>{
+   try{
+     if(Number.isFinite(pos)&&pos>0&&Math.abs((Number(p.currentTime)||0)-pos)>1)p.currentTime=pos;
+     p.volume=volume;p.muted=muted;
+     chooseExistingTrack(lang);
+     if(!wasPaused)p.play().catch(()=>{});
+   }catch{}
+   reloadInProgress=false;
+ };
+ p.addEventListener('loadedmetadata',restore,{once:true});
+ p.setAttribute('playback-id',playbackId);
+ setTimeout(()=>{chooseExistingTrack(lang);if(reloadInProgress)restore()},1500);
+ lastAppliedTrackKey=key;
 }
 
 function selectPlayerCaption(lang){
@@ -104,12 +132,7 @@ function selectPlayerCaption(lang){
  const key=`${currentLesson.id}:${lang}`;
  if(chooseExistingTrack(lang)){lastAppliedTrackKey=key;return;}
  if(lastAppliedTrackKey===key)return;
- lastAppliedTrackKey=key;
- let tries=0;
- const timer=setInterval(()=>{
-   tries++;
-   if(chooseExistingTrack(lang)||tries>=20)clearInterval(timer);
- },300);
+ reloadPlayerOnceForCaption(lang,key);
 }
 
 async function translateCurrent(force=false){
@@ -147,7 +170,7 @@ async function translateCurrent(force=false){
 setInterval(()=>{
  if(!currentLesson||q('lessonView')?.classList.contains('hidden'))return;
  const unified=normalize(document.documentElement.lang);
- if(unified!==captionLang)captionLang=unified;
+ if(unified!==captionLang){captionLang=unified;lastLessonKey='';}
  translateCurrent(false);
 },800);
 
