@@ -96,3 +96,10 @@ setTimeout(()=>{ensureCard();wireStudySignals();refresh()},900);
 setTimeout(refresh,2200);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refresh()});
 })();
+
+if(!document.querySelector('script[data-abba-resources]')){
+  const s=document.createElement('script');
+  s.src='academy-resources.js?v=20260910j';
+  s.dataset.abbaResources='1';
+  document.body.appendChild(s);
+}
