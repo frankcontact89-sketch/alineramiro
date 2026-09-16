@@ -14,7 +14,6 @@ function startOfWeek(d=new Date()){
   return x;
 }
 function addDays(d,n){const x=new Date(d);x.setDate(x.getDate()+n);return x}
-function diffDays(a,b){return Math.round((a-b)/86400000)}
 
 function ensureCard(){
   if(q('abbaWeeklyActivity'))return q('abbaWeeklyActivity');
@@ -101,5 +100,12 @@ if(!document.querySelector('script[data-abba-resources]')){
   const s=document.createElement('script');
   s.src='academy-resources.js?v=20260910j';
   s.dataset.abbaResources='1';
+  document.body.appendChild(s);
+}
+
+if(!document.querySelector('script[data-abba-ai-coach]')){
+  const s=document.createElement('script');
+  s.src='academy-coach.js?v=20260916a';
+  s.dataset.abbaAiCoach='1';
   document.body.appendChild(s);
 }
