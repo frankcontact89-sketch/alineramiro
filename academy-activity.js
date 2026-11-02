@@ -1,7 +1,7 @@
 (()=>{
 'use strict';
 const q=id=>document.getElementById(id);
-const DAY_LABELS=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
+const translations={en:{days:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],weekly:'WEEKLY ACTIVITY',title:'Your study week',streak:n=>n+'-day streak',active:n=>n+' active '+(n===1?'day':'days')+' this week',progress:'Course progress',studied:n=>'You studied '+n+' '+(n===1?'day':'days')+' this week.',empty:'Your study activity will appear here as you use the Academy.',yes:'studied',no:'no activity',today:'today'},pt:{days:['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],weekly:'ATIVIDADE SEMANAL',title:'Sua semana de estudos',streak:n=>n+' dias seguidos',active:n=>n+' dias ativos esta semana',progress:'Progresso do curso',studied:n=>'Você estudou em '+n+' '+(n===1?'dia':'dias')+' nesta semana.',empty:'Sua atividade de estudo aparecerá aqui conforme você acessar a Academy.',yes:'estudou',no:'sem atividade',today:'hoje'},es:{days:['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'],weekly:'ACTIVIDAD SEMANAL',title:'Tu semana de estudio',streak:n=>n+' días consecutivos',active:n=>n+' días activos esta semana',progress:'Progreso del curso',studied:n=>'Estudiaste '+n+' '+(n===1?'día':'días')+' esta semana.',empty:'Tu actividad de estudio aparecerá aquí cuando utilices la Academia.',yes:'estudió',no:'sin actividad',today:'hoy'}};const tr=()=>translations[document.documentElement.lang]||translations.en;
 
 function localDateString(d=new Date()){
   const y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');
@@ -57,7 +57,7 @@ function render(rows){
   const card=ensureCard();if(!card)return;
   const active=new Set((rows||[]).map(r=>String(r.activity_date)));
   const today=localDateString();
-  const monday=startOfWeek();
+  const L=tr();card.querySelector('.eyebrow').textContent=L.weekly;card.querySelector('h2').textContent=L.title;const monday=startOfWeek();
   const host=q('abbaWeekDays');host.innerHTML='';
   let weekCount=0;
   for(let i=0;i<7;i++){
@@ -65,16 +65,16 @@ function render(rows){
     if(didStudy)weekCount++;
     const cell=document.createElement('div');
     cell.className='abba-day'+(didStudy?' active':'')+(isToday?' today':'');
-    cell.setAttribute('aria-label',`${DAY_LABELS[i]}: ${didStudy?'estudou':'sem atividade'}${isToday?', hoje':''}`);
-    cell.innerHTML=`<span class="abba-day-mark">${didStudy?'✓':DAY_LABELS[i].slice(0,2)}</span><small>${DAY_LABELS[i]}</small>`;
+    cell.setAttribute('aria-label',`${L.days[i]}: ${didStudy?L.yes:L.no}${isToday?', '+L.today:''}`);
+    cell.innerHTML=`<span class="abba-day-mark">${didStudy?'✓':L.days[i].slice(0,2)}</span><small>${L.days[i]}</small>`;
     host.appendChild(cell);
   }
   const streak=calculateStreak(rows);
-  q('abbaStreak').textContent=streak===1?'1 dia seguido':`${streak} dias seguidos`;
-  q('abbaActiveCount').textContent=weekCount===1?'1 dia ativo esta semana':`${weekCount} dias ativos esta semana`;
+  q('abbaStreak').textContent=L.streak(streak);
+  q('abbaActiveCount').textContent=L.active(weekCount);
   const progress=q('progressLabel')?.textContent?.trim();
-  q('abbaCourseProgress').textContent=progress?`Progresso do curso: ${progress}`:'';
-  q('abbaWeeklyCopy').textContent=weekCount?`Você estudou em ${weekCount} ${weekCount===1?'dia':'dias'} nesta semana.`:'Sua atividade de estudo aparecerá aqui conforme você acessar a Academy.';
+  q('abbaCourseProgress').textContent=progress?`${L.progress}: ${progress}`:'';
+  q('abbaWeeklyCopy').textContent=weekCount?L.studied(weekCount):L.empty;
 }
 
 async function refresh(){
@@ -93,7 +93,7 @@ function wireStudySignals(){
 
 setTimeout(()=>{ensureCard();wireStudySignals();refresh()},900);
 setTimeout(refresh,2200);
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refresh()});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refresh()});document.getElementById('languageSelect')?.addEventListener('change',()=>setTimeout(refresh,60));
 })();
 
 if(!document.querySelector('script[data-abba-resources]')){
