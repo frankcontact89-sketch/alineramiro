@@ -103,3 +103,5 @@ if(!document.querySelector('script[data-abba-resources]')){
   document.body.appendChild(s);
 }
 
+
+if(!document.querySelector('script[data-abba-ai-coach]')){const script=document.createElement('script');script.src='academy-coach.js?v=20261101aftervideos';script.dataset.abbaAiCoach='1';document.body.appendChild(script)}
