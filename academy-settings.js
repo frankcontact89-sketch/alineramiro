@@ -11,6 +11,17 @@ async function session(){
 
 function setText(id,value){const el=q(id);if(el)el.textContent=value}
 
+
+function localizeSettings(){
+ const lang=document.documentElement.lang||'en';
+ const tr={en:{lesson:'Lesson',available:'Available',preview:'Preview · video coming soon',locked:'Locked',lessons:'lessons available',notes:'lessons with notes',none:'You have not saved any notes yet.',note:'Notes for lesson',done:'lessons'},pt:{lesson:'Aula',available:'Disponível',preview:'Prévia · vídeo em breve',locked:'Bloqueada',lessons:'aulas disponíveis',notes:'aulas com notas',none:'Você ainda não salvou notas.',note:'Notas da aula',done:'aulas'},es:{lesson:'Clase',available:'Disponible',preview:'Vista previa · video próximamente',locked:'Bloqueada',lessons:'clases disponibles',notes:'clases con notas',none:'Todavía no has guardado notas.',note:'Notas de la clase',done:'clases'}}[lang]||null;if(!tr)return;
+ document.querySelectorAll('#settingsLessonList .settings-lesson-row').forEach((row,index)=>{const label=row.querySelector('strong'),sub=row.querySelector('small');if(label)label.textContent=tr.lesson+' '+(index+1);if(sub)sub.textContent=row.classList.contains('locked')?tr.locked:sub.textContent.includes('·')?tr.preview:tr.available});
+ const count=q('settingsLessonStatus');if(count){const n=parseInt(count.textContent,10);if(Number.isFinite(n))count.textContent=n+' '+tr.lessons}
+ const done=q('journeyDone');if(done){const n=parseInt(done.textContent,10)||0;done.textContent=n+' / '+totalLessons+' '+tr.done}
+ const notes=q('settingsNotesCount');if(notes){const n=parseInt(notes.textContent,10);if(Number.isFinite(n))notes.textContent=n+' '+tr.notes}
+ document.querySelectorAll('#settingsNotesList .empty-notes').forEach(e=>e.textContent=tr.none);
+ document.querySelectorAll('#settingsNotesList .saved-note-head strong').forEach(e=>{const n=e.textContent.match(/\d+/);if(n)e.textContent=tr.note+' '+n[0]});
+}
 function formatTime(seconds){
   const s=Math.max(0,Math.floor(Number(seconds)||0));
   const h=Math.floor(s/3600),m=Math.floor((s%3600)/60);
@@ -100,7 +111,7 @@ async function refresh(){
     renderProgress(progressRes.error?[]:(progressRes.data||[]));
     renderNotes(noteRes.error?[]:(noteRes.data||[]),lessonRows);
     const available=lessonRows.filter(l=>previewMode||(l.is_published&&l.mux_playback_id)).length;
-    setText('settingsLessonStatus',`${available} ${available===1?'aula disponível':'aulas disponíveis'}`);
+    setText('settingsLessonStatus',`${available} ${available===1?'aula disponível':'aulas disponíveis'}`);localizeSettings();
   }catch(err){
     console.error('ABBA settings',err);
     setText('settingsLessonStatus','');
@@ -109,7 +120,7 @@ async function refresh(){
   }finally{loading=false;}
 }
 
-q('settingsBtn')?.addEventListener('click',()=>setTimeout(refresh,30));
+q('settingsBtn')?.addEventListener('click',()=>setTimeout(refresh,30));q('languageSelect')?.addEventListener('change',()=>setTimeout(localizeSettings,100));
 q('saveNoteBtn')?.addEventListener('click',()=>setTimeout(refresh,500));
 setTimeout(()=>{if(!q('portalView')?.classList.contains('hidden'))refresh()},1200);
 })();
