@@ -13,7 +13,8 @@ function injectStyles(){if(q('abbaCoachStyles'))return;const s=document.createEl
 `;document.head.appendChild(s)}
 function ensureHost(){injectStyles();let host=q('abbaAiCoach');if(host)return host;host=document.createElement('section');host.id='abbaAiCoach';host.className='abba-coach hidden';const toolbar=document.querySelector('.lesson-toolbar');toolbar?.insertAdjacentElement('afterend',host);return host}
 function isPilot(){return currentLesson&&Number(currentLesson.lesson_number)===PILOT_LESSON_NUMBER}
-function isUnlocked(){if(!currentLesson)return false;const p=typeof progressFor==='function'?progressFor(currentLesson.id):null;const player=q('muxPlayer');let nearEnd=false;try{nearEnd=player.duration>0&&player.currentTime/player.duration>=.9}catch{}return !!p?.completed||nearEnd}
+const completedVideoLessons=new Set();let coachRequested=false;
+function isUnlocked(){return !!currentLesson&&completedVideoLessons.has(currentLesson.id)&&coachRequested}
 function reset(){state.lessonId=currentLesson?.id||null;state.quiz=null;state.index=0;state.score=0;state.answered=false;state.coachTurns=0;state.history=[];state.started=false}
 function renderGate(){const host=ensureHost();if(!isPilot()){host.classList.add('hidden');return}if(state.lessonId!==currentLesson.id)reset();if(!isUnlocked()){host.classList.add('hidden');return}host.classList.remove('hidden');if(!state.started){state.started=true;startQuiz();}}
 async function api(payload){const {data:{session}}=await db.auth.getSession();if(!session)throw new Error('No session');const r=await fetch(`${SUPABASE_URL}/functions/v1/abba-ai-coach`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${session.access_token}`,'apikey':SUPABASE_KEY},body:JSON.stringify(payload)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||'AI Coach error');return j}
@@ -27,7 +28,8 @@ function renderChat(loading=false){const host=ensureHost();host.innerHTML=`<div 
 function renderCompleted(){const host=ensureHost();host.innerHTML=`<div class="abba-coach-head"><div class="abba-coach-icon">✓</div><div><h2>${c('done')}</h2><p>${c('score')}: ${state.score}/${state.quiz.length}</p></div></div><div id="abbaCoachChat" class="abba-coach-chat"></div><button id="abbaCoachRetry" class="secondary">${c('retry')}</button>`;const chat=q('abbaCoachChat');state.history.forEach(m=>{const d=document.createElement('div');d.className=`abba-coach-msg ${m.role==='assistant'?'ai':'user'}`;d.textContent=m.content;chat.appendChild(d)});q('abbaCoachRetry').onclick=()=>{reset();renderGate()}}
 function renderError(){const host=ensureHost();host.classList.remove('hidden');host.innerHTML=`<div class="abba-coach-head"><div class="abba-coach-icon">AI</div><div><h2>${c('title')}</h2><p>${c('error')}</p></div></div><button id="abbaCoachRetry" class="secondary">${c('retry')}</button>`;q('abbaCoachRetry').onclick=()=>{state.started=false;renderGate()}}
 function escapeHtml(v=''){return String(v).replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]))}
-const player=q('muxPlayer');player?.addEventListener('ended',renderGate);player?.addEventListener('timeupdate',()=>{if(isPilot()&&isUnlocked()&&!state.started)renderGate()});
-const lessonTitle=q('lessonTitle');if(lessonTitle){new MutationObserver(()=>setTimeout(renderGate,50)).observe(lessonTitle,{childList:true,characterData:true,subtree:true})}
-setTimeout(renderGate,1200);
+const player=q('muxPlayer');
+player?.addEventListener('ended',()=>{if(isPilot()&&currentLesson?.mux_playback_id)completedVideoLessons.add(currentLesson.id)});
+q('nextBtn')?.addEventListener('click',e=>{if(!isPilot()||!completedVideoLessons.has(currentLesson.id)||state.started)return;e.preventDefault();e.stopImmediatePropagation();coachRequested=true;renderGate();},true);
+const lessonTitle=q('lessonTitle');if(lessonTitle){new MutationObserver(()=>{coachRequested=false;ensureHost().classList.add('hidden');reset()}).observe(lessonTitle,{childList:true,characterData:true,subtree:true})}
 })();
