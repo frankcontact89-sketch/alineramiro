@@ -1,0 +1,38 @@
+name: Validate ABBA Academy changes
+
+on:
+  pull_request:
+    paths:
+      - 'academy.js'
+      - 'academy.html'
+      - '.github/workflows/academy-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  academy-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Academy JavaScript syntax
+        run: node --check academy.js
+      - name: Verify enrollment gates and in-app navigation
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const assert = require('node:assert/strict');
+          const js = fs.readFileSync('academy.js', 'utf8');
+          assert(!js.includes('isPrivatePreview'), 'Hardcoded Academy preview bypass must not exist');
+          assert(js.includes("eq('status','active')"), 'Active enrollment required');
+          assert(js.includes('enrollment.expires_at'), 'Expired enrollment must be rejected');
+          assert(js.includes('if(enrollmentError)'), 'Enrollment query errors must fail closed');
+          assert(js.includes("type:'prayer-fire:abba-back'"), 'In-app back message required');
+          assert(js.includes("if(window.parent===window)return"), 'Standalone back link must remain functional');
+          console.log('Academy static regression checks passed');
+          NODE
