@@ -60,7 +60,7 @@ const isPrayerFireEmbedded=new URLSearchParams(location.search).get('embedded')=
 if(isPrayerFireEmbedded){
   // Purchases and enrollments are handled on the public website, not in the iOS app.
   const enrollLink=document.getElementById('enrollmentBtn');
-  if(enrollLink)enrollLink.hidden=true;
+  if(enrollLink){enrollLink.hidden=true;enrollLink.style.display='none'}
   const enrollmentCopy=document.getElementById('enrollmentCopy');
   if(enrollmentCopy){
     const appEnrollmentText={en:'Your classes will appear here when your enrollment is active. Enrollment is managed on the ABBA Academy website.',es:'Tus clases aparecerán aquí cuando tu inscripción esté activa. La inscripción se realiza en el sitio web de ABBA Academy.',pt:'Suas aulas aparecerão aqui quando sua matrícula estiver ativa. As inscrições são feitas no site da ABBA Academy.'};
