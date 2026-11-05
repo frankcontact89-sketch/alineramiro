@@ -59,16 +59,11 @@ const academyBackLink=document.getElementById('backHome');
 if(academyBackLink){
   academyBackLink.addEventListener('click',event=>{
     if(window.parent===window)return;
-    const supplied=new URLSearchParams(window.location.search).get('parent_origin');
-    let origin;
-    try{
-      const url=new URL(supplied||'');
-      const allowed=url.origin==='capacitor://localhost'||url.origin==='http://localhost'||url.origin==='https://localhost';
-      if(!allowed)return;
-      origin=url.origin;
-    }catch{return}
+    // This is only a UI navigation signal; it never includes credentials or user data.
+    // Capacitor iOS can expose an opaque parent origin, so an exact target origin is
+    // not reliable here. The receiving app MUST validate message origin and iframe source.
     event.preventDefault();
-    window.parent.postMessage({type:'prayer-fire:abba-back',version:1},origin);
+    window.parent.postMessage({type:'prayer-fire:abba-back',version:1},'*');
   });
 }
 applyLanguage(currentLang);translateAcademyNav();
