@@ -33,6 +33,7 @@ jobs:
           assert(js.includes('enrollment.expires_at'), 'Expired enrollment must be rejected');
           assert(js.includes('if(enrollmentError)'), 'Enrollment query errors must fail closed');
           assert(js.includes("type:'prayer-fire:abba-back'"), 'In-app back message required');
-          assert(js.includes("if(window.parent===window)return"), 'Standalone back link must remain functional');
+          assert(js.includes("window.parent===window || !isPrayerFireEmbedded"), 'Standalone back link must remain functional');
+          assert(js.includes("enrollLink.style.display=\'none\'"), 'Embedded payment/enrollment link must be hidden');
           console.log('Academy static regression checks passed');
           NODE
