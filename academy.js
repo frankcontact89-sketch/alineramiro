@@ -55,10 +55,26 @@ $('exploreOpenCourse').addEventListener('click',()=>openAcademyTab('home'));
 
 // In the Prayer & Fire mobile iframe, return through the host app instead of navigating its web history.
 // The parent origin is not trusted for authentication, and no credentials are transferred.
+// This flag controls presentation only; access to lessons is always enforced by Supabase RLS.
+const isPrayerFireEmbedded=new URLSearchParams(location.search).get('embedded')==='prayer-fire';
+if(isPrayerFireEmbedded){
+  // Purchases and enrollments are handled on the public website, not in the iOS app.
+  const enrollLink=document.getElementById('enrollmentBtn');
+  if(enrollLink)enrollLink.hidden=true;
+  const enrollmentCopy=document.getElementById('enrollmentCopy');
+  if(enrollmentCopy){
+    const appEnrollmentText={en:'Your classes will appear here when your enrollment is active. Enrollment is managed on the ABBA Academy website.',es:'Tus clases aparecerán aquí cuando tu inscripción esté activa. La inscripción se realiza en el sitio web de ABBA Academy.',pt:'Suas aulas aparecerão aqui quando sua matrícula estiver ativa. As inscrições são feitas no site da ABBA Academy.'};
+    const updateEnrollmentCopy=()=>{if(!enrollLink||enrollLink.hidden)enrollmentCopy.textContent=appEnrollmentText[currentLang]||appEnrollmentText.en};
+    // applyLanguage() also updates the enrollment message; wrap it to preserve the app-only copy.
+    const priorApplyLanguage=applyLanguage;
+    applyLanguage=function(lang){priorApplyLanguage(lang);updateEnrollmentCopy()};
+    updateEnrollmentCopy();
+  }
+}
 const academyBackLink=document.getElementById('backHome');
 if(academyBackLink){
   academyBackLink.addEventListener('click',event=>{
-    if(window.parent===window)return;
+    if(window.parent===window || !isPrayerFireEmbedded)return;
     // This is only a UI navigation signal; it never includes credentials or user data.
     // Capacitor iOS can expose an opaque parent origin, so an exact target origin is
     // not reliable here. The receiving app MUST validate message origin and iframe source.
